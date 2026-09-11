@@ -1,0 +1,1085 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Community Assist Pilot</title>
+<style>:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4f7f5;color:#13261f}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{border:0;border-radius:999px;padding:.78rem 1rem;font-weight:800;background:#e7eeea;color:#173d32}button.primary{background:#173d32;color:#fff}button:disabled{opacity:.45}.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;background:#fffE;border-bottom:1px solid #dce5df;padding:12px 16px;backdrop-filter:blur(12px)}.brand{display:flex;gap:9px;align-items:center}.logo{width:39px;height:39px;border-radius:12px;background:#173d32;color:#fff;display:grid;place-items:center;font-weight:950}.brand small{display:block;color:#728078}.shell{max-width:1050px;margin:auto;padding:14px}.hero{background:linear-gradient(135deg,#143b30,#215f4b);color:#fff;border-radius:24px;padding:24px 18px}.hero h1{font-size:clamp(2.3rem,8vw,4.8rem);line-height:.94;margin:.35rem 0 .9rem}.hero em{font-style:normal;color:#9ce0b8}.hero p{color:#deebe5;max-width:760px}.hero .actions{display:flex;gap:8px;flex-wrap:wrap}.card{background:#fff;border:1px solid #dae4de;border-radius:21px;padding:18px;margin-top:14px;box-shadow:0 8px 22px rgba(20,55,45,.05)}.head{display:flex;justify-content:space-between;gap:10px;align-items:start}.head h2{margin:.2rem 0 0}.eyebrow{font-size:.72rem;letter-spacing:.1em;font-weight:900;color:#3e6b59}.stepbar{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:16px 0}.stepbar span{text-align:center;padding:.5rem .2rem;background:#eef2ef;color:#7b8781;border-radius:9px;font-size:.72rem}.stepbar .on{background:#d8efdf;color:#185d3a;font-weight:900}textarea,input,select{width:100%;border:1px solid #cfd9d3;border-radius:13px;padding:12px;background:#fbfcfb;outline:none}textarea{min-height:115px;resize:vertical}.route,.notice,.success{border-radius:14px;padding:12px;margin:11px 0;background:#f0f6f2}.notice.err{background:#fff0f0;color:#8f2828}.route b{display:block}.route small{color:#65766e}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grow{flex:1}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.issue{border-top:1px solid #e9eeeb;padding:14px 0}.issue:first-child{border-top:0}.badges{display:flex;gap:6px;flex-wrap:wrap}.badge{font-size:.69rem;font-weight:900;background:#e8f5ed;color:#22613f;padding:.32rem .52rem;border-radius:999px}.badge.blue{background:#eaf0fa;color:#365f97}.issue h3{margin:.48rem 0 .25rem}.issue p{margin:.2rem 0 .65rem;color:#66766f}.stats{display:flex;gap:12px;flex-wrap:wrap;font-size:.76rem;color:#5f7068}.upload{display:grid;gap:6px;border:1px dashed #b7c7bf;background:#f8faf9;border-radius:14px;padding:11px;margin-top:10px}.upload input{border:0;padding:0;background:transparent}.upload b{font-size:.8rem;color:#315f4e}.verify{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:9px}.verify button,.mini{font-size:.73rem;padding:.52rem .65rem}.mini{display:inline-flex;gap:5px;align-items:center;background:#edf3ef;border-radius:999px;font-weight:800;cursor:pointer}.mini input{display:none}.authbox{display:none}.authbox.show{display:block}.tiny{font-size:.82rem;color:#6d7b75}.empty{color:#76837e}.pilllive{font-size:.72rem;font-weight:900;border-radius:999px;padding:.4rem .6rem;background:#dff3e6;color:#175b38}.footer-note{display:flex;justify-content:space-between;gap:10px;align-items:center}.footer-note span{font-weight:900;background:#ddf3e6;color:#165a38;padding:.4rem .65rem;border-radius:999px}@media(max-width:760px){.grid{grid-template-columns:1fr}.shell{padding:10px}.hero{border-radius:20px}.hero h1{font-size:2.65rem}.head{align-items:center}.row.stack{align-items:stretch;flex-direction:column}.row.stack button{width:100%}.top .status-label{display:none}}.consent{display:flex;align-items:center;gap:8px;margin-top:8px}.consent input{width:auto}.issue.unread{box-shadow:0 0 0 2px rgba(20,78,60,.12) inset}.issue-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.action-center{margin:12px 0;padding:13px;border:1px solid #dce7e1;border-radius:16px;background:#fbfdfc}.action-center .primary-call{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.action-center .primary-call b{display:block}.action-center .primary-call small{display:block;color:#65766e;margin-top:3px;line-height:1.35}.progressline{display:flex;gap:5px;margin:10px 0 6px}.progressline span{height:7px;flex:1;border-radius:999px;background:#e4ebe7}.progressline span.done{background:#5b8f77}.progressline span.now{background:#a7c9b7}.progress-steps{display:grid;gap:7px;margin-top:10px}.progress-step{padding:9px 10px;border-radius:12px;background:#f4f7f5;border-left:3px solid #d2ddd7}.progress-step.complete{border-left-color:#4d866b}.progress-step.current{border-left-color:#d69b38}.progress-step.blocked{border-left-color:#b34f4f}.progress-step b{display:block;font-size:.9rem}.progress-step small{color:#65766e}.verify-choices{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:10px}.metric{background:#f3f7f4;border:1px solid #e0e8e3;border-radius:14px;padding:11px}.metric b{display:block;font-size:1.2rem}.metric small{color:#65766e}.attention-list{display:grid;gap:8px;margin-top:10px}.attention-item{border:1px solid #e1e8e4;border-radius:14px;padding:11px;background:#fbfcfb}.attention-item b{display:block}.owner-card{border:1px solid #d8e4de;background:#f8fbf9}.owner-card .owner-banner{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 12px;border-radius:13px;background:#e9f3ed;margin:10px 0}.readiness-list{display:grid;gap:7px;margin-top:10px}.readiness-row{display:flex;justify-content:space-between;gap:12px;padding:9px 10px;border:1px solid #e0e8e3;border-radius:12px;background:white}.readiness-row small{color:#65766e}.case-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.72rem;font-weight:900;background:#eef2ef;color:#365448;padding:.28rem .48rem;border-radius:7px}.trustbox{background:#f4f8f6;border-left:4px solid #2f775b;padding:10px 12px;border-radius:10px;margin:10px 0}.guidance{background:#f8f6ee;border:1px solid #ebe3c9;border-radius:14px;padding:11px;margin:9px 0}.guidance b{display:block}.field-panel{border:1px solid #dfe7e2;background:#fafcfb;border-radius:14px;padding:11px;margin-top:10px}.field-panel textarea{min-height:76px}.linkbtn{display:inline-block;text-decoration:none;border-radius:999px;padding:.78rem 1rem;font-weight:800;background:#173d32;color:#fff}.secondary-link{display:inline-block;text-decoration:none;border-radius:999px;padding:.65rem .85rem;font-weight:800;background:#e7eeea;color:#173d32}.muted{opacity:.68}.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px;margin-top:10px}.trust-grid>div{background:#f6f9f7;border-radius:14px;padding:11px;border:1px solid #e3e9e5}
+.shared-case{border:1px solid #cfe2d8;background:linear-gradient(180deg,#fbfefc,#f3f8f5)}.shared-case .shared-hero{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.shared-case .shared-status{font-size:.72rem;font-weight:900;background:#e4f1e9;color:#235c43;padding:.35rem .55rem;border-radius:999px}.shared-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.shared-verify{display:grid;gap:9px;margin-top:12px;padding:12px;border:1px solid #dde8e1;border-radius:14px;background:#fff}.shared-verify .choices{display:flex;gap:7px;flex-wrap:wrap}.shared-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:.8rem;color:#5f7068;margin-top:8px}.shared-case .invite-note{background:#fff7e7;border:1px solid #f0dfb8;border-radius:12px;padding:10px;margin-top:10px}.shared-case .existing-vote{background:#eef6f1;border-radius:12px;padding:10px;margin-top:10px}.shared-case input[type=file]{padding:8px}.deep-link-chip{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.7rem;background:#edf2ef;padding:.28rem .45rem;border-radius:7px}.privacy-choice{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}.privacy-choice label{border:1px solid #d8e3dd;border-radius:13px;padding:10px;background:#fbfdfc;cursor:pointer}.privacy-choice input{width:auto;margin-right:6px}.privacy-choice b{display:block;margin-bottom:3px}.privacy-choice small{display:block;color:#65766e;line-height:1.3}@media(max-width:600px){.privacy-choice{grid-template-columns:1fr}}.review-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.review-tabs button.active{background:#173d32;color:#fff}.review-item{border:1px solid #dce5df;background:#fff;border-radius:15px;padding:12px;margin-top:9px}.review-item h3{margin:.25rem 0}.review-item .risk{font-size:.68rem;font-weight:900;padding:.3rem .5rem;border-radius:999px;background:#f4ead5;color:#75561f}.review-item .risk.high{background:#fae2e2;color:#842f2f}.review-item .review-meta{font-size:.78rem;color:#65766e;display:flex;gap:10px;flex-wrap:wrap;margin:6px 0}.review-item .review-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.review-item select,.review-item textarea{margin-top:7px}.review-preview{max-width:100%;max-height:260px;border-radius:12px;border:1px solid #dfe7e2;margin-top:8px}.review-empty{padding:18px;text-align:center;color:#6d7b75;background:#f7faf8;border-radius:14px}.danger-action{background:#f6dfdf;color:#7d2a2a}.warn-action{background:#f4ead5;color:#76561f}
+/* v11: idempotent submission */
+/* v10: pilot hardening */
+.connection-banner{position:sticky;top:64px;z-index:9;max-width:1050px;margin:8px auto 0;padding:10px 14px;border:1px solid #e7dcc0;border-radius:14px;background:#fff8e9;color:#6a5420;font-size:.83rem;font-weight:750;box-shadow:0 6px 18px rgba(30,55,45,.08)}.connection-banner.online{border-color:#cfe3d7;background:#edf7f1;color:#225d3f}.connection-banner[hidden]{display:none}.busy{cursor:wait}.tap-status{margin-top:8px}.tap-status .issue-actions{margin-top:7px}@media(max-width:760px){.connection-banner{top:62px;margin:6px 10px 0}.verify button,.issue-actions button{min-height:42px}}
+/* v9: verification handoff + mobile responsiveness */
+.consensus-handoff{margin-top:10px;padding:11px 12px;border:1px solid #e7dcc0;background:#fff8e9;border-radius:13px}.consensus-handoff b{display:block}.consensus-handoff .tiny{margin-top:3px}.consensus-handoff.reached{border-color:#cfe3d7;background:#edf7f1}.consensus-handoff .handoff-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+@media(max-width:760px){
+  .hero .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.hero .actions button{width:100%;min-height:44px;padding:.7rem .6rem}
+  .shared-case .shared-hero{gap:8px}.shared-case .shared-actions,.shared-case .shared-verify .choices,.consensus-handoff .handoff-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.shared-case .shared-actions button,.shared-case .shared-verify .choices button,.consensus-handoff .handoff-actions button{width:100%;min-height:44px;padding:.65rem .55rem}
+  .owner-card,#watchCenterCard,#notificationPrefsCard,#privacyCard,#browseIssuesCard{content-visibility:auto;contain-intrinsic-size:auto 520px}
+}
+@media(max-width:430px){.hero .actions{grid-template-columns:1fr}.shared-case .shared-actions,.shared-case .shared-verify .choices,.consensus-handoff .handoff-actions{grid-template-columns:1fr}.hero h1{font-size:2.35rem}.card{padding:14px}.shared-meta{gap:8px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand"><div class="logo">CA</div><div><b>Community Assist</b><small>Queens pilot · live backend</small></div></div><div><span id="statusLabel" class="status-label tiny">Not signed in</span> <button id="authBtn">Sign in</button></div></header>
+<div id="connectionBanner" class="connection-banner" hidden role="status" aria-live="polite"></div>
+<main class="shell">
+<section class="hero"><small>SEE IT · ROUTE IT · TRACK IT · VERIFY IT</small><h1>Make a neighborhood problem <em>hard to lose.</em></h1><p>This pilot is connected to the real Community Assist production backend. Official government records are checked quietly in the background while community issues remain independent.</p><div class="actions"><button class="primary" id="startReport">📸 Report something</button><button id="quickLocation">📍 Use my location</button><button id="myIssuesBtn">☑ My Issues</button><button id="notificationsBtn">🔔 Updates</button><button id="attentionBtn">⚑ What needs me</button><button id="aroundMe">◎ Explore around me</button><button id="browseIssuesBtn">Browse issues</button><button id="civicDashboardBtn">Civic dashboard</button><button id="findCaseBtn">⌕ Find a case</button><button id="watchesBtn">◉ Watches</button><button id="privacyBtn">Privacy</button></div></section>
+
+<section id="authBox" class="card authbox"><div class="head"><div><div class="eyebrow">RESIDENT SIGN-IN</div><h2>No password to remember</h2></div><button id="closeAuth">Close</button></div><p class="tiny">Enter your email. Supabase will send a one-time sign-in link. Your identity stays off the public issue record.</p><div class="row stack"><input id="email" type="email" placeholder="you@example.com" class="grow"/><button id="sendLink" class="primary">Email me a sign-in link</button></div><div id="authMsg"></div></section>
+<section id="sharedCaseCard" class="card shared-case" hidden><div class="shared-hero"><div><div class="eyebrow">SHARED COMMUNITY ASSIST CASE</div><h2 id="sharedCaseHeading">Case shared with you</h2></div><span id="sharedCaseCode" class="shared-status">Loading</span></div><div id="sharedCaseBody"><p class="empty">Loading shared case…</p></div></section>
+<section id="caseLookupCard" class="card" hidden><div class="head"><div><div class="eyebrow">FIND A CASE</div><h2>Open a Community Assist case</h2></div><button id="closeCaseLookup">Close</button></div><p class="tiny">Enter the short case code shown on a shared message, flyer, meeting packet, or neighborhood update.</p><div class="row stack"><input id="caseLookupInput" placeholder="CA-8CB4A4DFD5" autocomplete="off" autocapitalize="characters" class="grow"><button id="caseLookupGo" class="primary">Open case</button></div><div id="caseLookupMsg"></div></section>
+
+
+
+<section id="residentHomeCard" class="card" hidden><div class="head"><div><div class="eyebrow">WHAT NEEDS MY ATTENTION</div><h2>My Community Assist</h2></div><button id="refreshHome">Refresh</button></div><p class="tiny">A compact view of updates, verification needs, official-service follow-up, and watches that may need your attention.</p><div id="homeMetrics" class="metric-grid"></div><div id="homeAttention" class="attention-list"><p class="empty">No action items yet.</p></div></section>
+<section id="watchCenterCard" class="card" hidden><div class="head"><div><div class="eyebrow">PRIVATE WATCH CENTER</div><h2>Follow places and agencies</h2></div><button id="refreshWatches">Refresh</button></div><p class="tiny">Watches are private to your account. Community Assist uses them only to decide which in-app alerts you should receive.</p><div class="route"><b>Watch only these categories <small>optional</small></b><small>Leave all unchecked to receive alerts for every issue category. These choices apply to the next watch you create.</small><div id="watchCategoryFilter" class="verify-choices" style="margin-top:9px"></div><button id="clearWatchCategories" style="margin-top:8px">Clear categories</button></div><div class="grid"><div><div class="route"><b>Watch an area</b><small>Choose a location with GPS or NYC address search first. The sample Queens map point cannot be saved as a watch.</small><label class="tiny">Watch name</label><input id="watchAreaLabel" value="My area" maxlength="80"/><label class="tiny">Radius</label><select id="watchAreaRadius"><option value="500">500 m</option><option value="1000" selected>1 km</option><option value="1500">1.5 km</option><option value="3000">3 km</option></select><p id="watchLocationStatus" class="tiny">Choose a real location first.</p><button id="createAreaWatch" class="primary" disabled>Watch this area</button></div><div><h3>My area watches</h3><div id="areaWatchList"><p class="empty">No area watches yet.</p></div></div></div><div><div class="route"><b>Follow civic districts</b><small>Use your chosen location to find the Community Board and Council district.</small><button id="resolveWatchCivic">Find districts for this location</button><div id="watchCivicOptions"></div></div><div class="route"><b>Follow an agency</b><small>Get alerts when new public Community Assist issues are routed to that agency.</small><select id="watchAgencySelect"><option value="DOT">NYC DOT</option><option value="DSNY">NYC Sanitation</option><option value="DEP">NYC DEP</option><option value="DPR">NYC Parks</option><option value="DOB">NYC Buildings</option></select><button id="createAgencyWatch" style="margin-top:8px">Follow agency</button></div><div><h3>My district & agency watches</h3><div id="scopeWatchList"><p class="empty">No district or agency watches yet.</p></div></div></div></div><div id="watchMsg"></div></section>
+
+<section id="ownerPilotCard" class="card owner-card" hidden><div class="head"><div><div class="eyebrow">OWNER · PILOT READINESS</div><h2>Launch gate</h2></div><button id="refreshPilot">Refresh</button></div><p class="tiny">Visible only to Community Assist owners and moderators. Tracks what has actually been proven before outside residents are invited.</p><div id="pilotMetrics" class="metric-grid"></div><div id="pilotNext"></div><div id="pilotRemaining" class="readiness-list"></div><div class="route"><b>Record a live test result</b><small>Use this only after the scenario has actually been exercised.</small><label class="tiny">Scenario</label><select id="pilotScenarioSelect"></select><div class="row stack" style="margin-top:8px"><select id="pilotResultSelect"><option value="passed">Passed</option><option value="blocked">Blocked</option><option value="partial">Partial</option><option value="failed">Failed</option></select><input id="pilotCaseCodeInput" placeholder="Optional case code, e.g. CA-8CB4A4DFD5"/></div><textarea id="pilotTestNote" placeholder="What happened? Keep the note factual." style="min-height:70px"></textarea><button id="savePilotResult" class="primary">Save test result</button><div id="pilotResultMsg"></div></div></section>
+<section id="ownerOpsCard" class="card owner-card" hidden><div class="head"><div><div class="eyebrow">OWNER · OPERATIONS</div><h2>System & moderation</h2></div><div class="issue-actions"><button id="openReviewCenter">Review queues</button><button id="refreshOwnerOps">Refresh</button></div></div><div id="ownerHealthBanner" class="owner-banner"><div><b>Checking system health…</b><small>Owner-only operational status</small></div></div><div id="ownerOpsMetrics" class="metric-grid"></div><div id="ownerOpsAttention" class="attention-list"></div></section>
+<section id="ownerReviewCard" class="card owner-card" hidden><div class="head"><div><div class="eyebrow">OWNER · REVIEW CENTER</div><h2>Resolve moderation queues</h2></div><div class="issue-actions"><button id="refreshReviewCenter">Refresh</button><button id="closeReviewCenter">Close</button></div></div><p class="tiny">Actions use the existing Community Assist moderation safeguards. Review notes stay private. No action here sends an escalation automatically.</p><div id="reviewQueueMetrics" class="metric-grid"></div><div class="review-tabs"><button data-review-tab="triage" class="active">Routing triage</button><button data-review-tab="conflicts">Routing conflicts</button><button data-review-tab="duplicates">Duplicates</button><button data-review-tab="content">Content & privacy</button><button data-review-tab="evidence">Evidence</button></div><div id="reviewCenterMsg"></div><div id="reviewQueueContent"><div class="review-empty">Loading review queues…</div></div></section>
+
+<section class="card"><div class="head"><div><div class="eyebrow">LIVE REPORT FLOW</div><h2>Report a neighborhood problem</h2></div><span id="stepLabel" class="pilllive">Step 1 of 4</span></div><div class="stepbar"><span id="s1" class="on">1 Describe</span><span id="s2">2 Locate</span><span id="s3">3 Match</span><span id="s4">4 Track</span></div><div class="route" id="locationSummary"><b>📍 Location</b><small id="locationSummaryText">Not set yet · you can set it now or in Step 2.</small></div>
+<div id="step1"><textarea id="description" placeholder="Example: The crosswalk paint is almost completely gone and cars are not stopping."></textarea><div class="route"><b>Public summary <small>optional · visible to everyone</small></b><textarea id="publicSummary" maxlength="240" placeholder="Example: Crosswalk markings are almost completely faded at this intersection." style="min-height:78px"></textarea><div class="footer-note"><span id="publicSummaryCount">0/240</span><small class="tiny">Write only what you are comfortable making public. Your full report description stays private.</small></div></div><div class="upload"><strong>📷 Add photo evidence <small>optional · private storage</small></strong><input id="reportPhoto" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"/><b id="reportPhotoName"></b><label class="tiny consent"><input id="reportShareConsent" type="checkbox"/> Allow this evidence to be shown publicly after review</label></div><div class="route" id="routeBox"><b>Something else</b><small>low confidence · needs jurisdiction check</small></div><label class="tiny" for="categoryOverride"><b>Category</b></label><select id="categoryOverride"><option value="">Auto-detect from description</option></select><p class="tiny">If Community Assist guessed wrong, choose the correct category before continuing.</p><p id="draftStatus" class="tiny">Unfinished report text can be kept on this device for up to 30 minutes during sign-in. Photos, email, and GPS coordinates are never stored in the temporary draft.</p><button id="toLocation" class="primary" disabled>Continue</button></div>
+<div id="step2" hidden><label>Location label</label><input id="locationLabel" placeholder="Intersection or address label"/><div class="row stack" style="margin-top:9px"><button class="primary" id="captureLocation">◎ Use current location</button><span id="coordsText" class="tiny"></span></div><div class="route"><b>Confirm an NYC address or place</b><small>Search uses NYC Planning GeoSearch. Choose a result to set the report location.</small><div class="row stack" style="margin-top:8px"><input id="addressSearch" class="grow" placeholder="Address, intersection, or place name"/><button id="addressSearchBtn">Search NYC</button></div><div id="addressSearchResults"></div></div><div class="route"><b>Public location privacy</b><small>Community Assist keeps the exact coordinates privately for routing and accountability. You control how precise the public location is.</small><div class="privacy-choice"><label><b><input type="radio" name="locationPrecision" value="exact" checked> Exact</b><small>Best for a specific pole, pothole, signal, curb, or other public asset.</small></label><label><b><input type="radio" name="locationPrecision" value="approximate"> Approximate</b><small>Public map location is reduced to roughly block-level precision.</small></label><label><b><input type="radio" name="locationPrecision" value="hidden"> Hidden</b><small>No public map point. The exact location stays private for routing and records.</small></label></div><p id="locationPrivacyNote" class="tiny">Public display: exact issue location.</p><div id="publicLocationPreview" class="trustbox"><b>Public preview</b><span id="publicLocationPreviewText">Add a location label to preview what residents will see.</span></div></div><div class="route"><b>Jurisdiction check</b><small>NYC pilot</small><p class="tiny">The pilot distinguishes issue category from who owns the asset. Ambiguous conditions stay in triage.</p></div><div class="route"><b>Safety check</b><small>Is anyone in immediate danger right now?</small><div class="issue-actions"><button id="safetySafe">No immediate danger</button><button id="safetyDanger">Yes, immediate danger</button></div><div id="safetyStatus" class="tiny">Choose one before submitting.</div><div id="safetyDangerPanel" hidden><div class="notice err"><b>Call 911 for immediate danger.</b><br>Community Assist is not a substitute for emergency services.</div><label class="consent"><input id="safetyAck" type="checkbox"> I understand and still want to document this issue after handling the emergency.</label></div></div><div id="submitReviewCard" class="route" hidden><b>Review what will be public</b><small>Nothing is submitted until you confirm below.</small><div id="submitReviewContent" class="trust-grid"></div><p class="tiny"><b>Stays private:</b> your full report description, account identity, exact coordinates when you choose Approximate or Hidden, and the original evidence file.</p><div class="issue-actions"><button id="editSubmitReview">Keep editing</button><button id="confirmSubmit" class="primary">Confirm & check nearby</button></div></div><button id="back1">Back</button> <button id="submitCheck" class="primary" disabled>Review report</button></div>
+<div id="step3" hidden><div class="route"><b>Possible same physical problem</b><small>175 m · same category · 120 days</small><p class="tiny">Supporting an existing issue avoids duplicate clutter and your description/photo can be added as another observation.</p></div><div id="duplicateList"></div><button id="back2">Back</button> <button id="differentProblem" class="primary">This is a different problem</button></div>
+<div id="step4" hidden><div class="success"><div class="badges"><span class="badge">TRACKED</span><span id="successCaseCode" class="case-code">CASE PENDING</span></div><h3 id="successTitle">Issue tracked</h3><p id="successText"></p></div><div id="successNext" class="action-center"><small>Loading the next step…</small></div><div class="issue-actions"><button id="successContinue" class="primary">Open in My Issues</button><button id="successProgress">View case progress</button><button id="successShare">Share case</button><button id="anotherReport">Report another problem</button></div><div id="successDetail"></div></div><div id="flowMsg"></div></section>
+
+<section id="myCard" class="card" hidden><div class="head"><div><div class="eyebrow">MY COMMUNITY ASSIST</div><h2>Issues I am tracking</h2></div><button id="refreshMine">Refresh</button></div><div id="myFeed"></div><div id="escalationMsg"></div></section>
+
+<section id="notificationsCard" class="card" hidden><div class="head"><div><div class="eyebrow">MY UPDATES</div><h2>Changes to issues I track</h2></div><div class="issue-actions"><button id="refreshNotifications">Refresh</button><button id="markAllRead">Mark all read</button><button id="notificationPrefsBtn">Preferences</button></div></div><p class="tiny">Community Assist keeps government status changes separate from resident verification. Updates appear here when a tracked issue changes.</p><div id="notificationsFeed"><p class="empty">No notifications yet.</p></div></section>
+<section id="notificationPrefsCard" class="card" hidden><div class="head"><div><div class="eyebrow">UPDATE PREFERENCES</div><h2>Digest and alert topics</h2></div><button id="closeNotificationPrefs">Close</button></div><p class="tiny">In-app alerts are active now. Email digests will remain off until Community Assist has a verified production sending domain.</p><div class="grid"><div><label class="tiny"><b>Digest frequency</b></label><select id="digestFrequency"><option value="off">Off</option><option value="daily">Daily</option><option value="weekly">Weekly</option></select><label class="tiny"><b>Preferred hour</b></label><select id="digestHour"></select><label class="tiny"><b>Timezone</b></label><input id="digestTimezone" value="America/New_York"/></div><div><label class="consent"><input id="prefOfficial" type="checkbox" checked> Official status and submission updates</label><label class="consent"><input id="prefVerification" type="checkbox" checked> Verification updates</label><label class="consent"><input id="prefWatches" type="checkbox" checked> Area, district, and agency watch alerts</label><label class="consent"><input id="prefRecurrence" type="checkbox" checked> Recurring-problem alerts</label></div></div><div class="issue-actions"><button id="saveNotificationPrefs" class="primary">Save preferences</button><button id="previewDigest24">Preview 24 hours</button><button id="previewDigest168">Preview 7 days</button></div><div id="notificationPrefsMsg"></div><div id="digestPreview"></div></section>
+<section id="privacyCard" class="card" hidden><div class="head"><div><div class="eyebrow">PRIVACY & MY DATA</div><h2>Your account controls</h2></div><button id="closePrivacy">Close</button></div><div class="grid"><div><div class="trustbox"><b>Download my data</b><p class="tiny">Export only your Community Assist participation, private settings, tracking, verifications, watches, notifications, and privacy requests. Other residents are not included.</p><button id="downloadMyData" class="primary">Download my data</button></div></div><div><div class="route"><b>Delete my account</b><small>Deletion has a 7-day cancellation window. Public civic issue history may remain, but your account identity is detached from historical records.</small><p class="tiny">Type <b>DELETE MY ACCOUNT</b> exactly to request deletion.</p><input id="deleteAccountConfirm" placeholder="DELETE MY ACCOUNT"/><button id="requestDeleteAccount" style="margin-top:8px">Request account deletion</button><div id="pendingDeletionBox"></div></div></div></div><div id="privacyMsg"></div></section>
+
+<section id="civicDashboardCard" class="card" hidden><div class="head"><div><div class="eyebrow">CIVIC ACCOUNTABILITY</div><h2>Community Board & Council dashboard</h2></div><button id="closeCivicDashboard">Close</button></div><p class="tiny">This is Community Assist accountability data, not an official government performance score. Only public-safe case information is shown.</p><div class="row stack"><select id="civicScopeType" class="grow"><option value="community_board">Community Board</option><option value="council_district">Council district</option></select><input id="civicScopeCode" class="grow" inputmode="numeric" placeholder="Community district code, e.g. 404"><button id="loadCivicDashboard" class="primary">Open dashboard</button><button id="useLocationForCivic">Use my chosen location</button></div><div id="civicLocationOptions"></div><div id="civicDashboardMsg"></div><div id="civicDashboardContent"></div></section>
+
+<section id="pulseCard" class="card"><div class="head"><div><div class="eyebrow">NEIGHBORHOOD PULSE</div><h2>What needs attention nearby</h2></div><button id="refreshPulse">Refresh</button></div><div id="pulseMetrics" class="stats"></div><div id="pulseFeed"><p class="empty">Loading…</p></div></section>
+
+<section id="browseIssuesCard" class="card" hidden><div class="head"><div><div class="eyebrow">PUBLIC COMMUNITY ISSUES</div><h2>Browse Community Assist</h2></div><button id="closeBrowseIssues">Close</button></div><p class="tiny">Search uses public-safe case information only. Private report descriptions and private exact locations are never searched or returned.</p><div class="grid"><div><label class="tiny"><b>Search</b></label><input id="browseQuery" placeholder="Streetlight, crosswalk, case topic..." maxlength="120"/><label class="tiny"><b>Category</b></label><select id="browseCategory"><option value="">All categories</option></select><label class="tiny"><b>Status</b></label><select id="browseStatus"><option value="">All statuses</option><option value="reported">Reported</option><option value="routed">Routed</option><option value="awaiting_verification">Awaiting verification</option><option value="still_broken">Still broken</option><option value="partly_fixed">Partly fixed</option><option value="verified_fixed">Verified fixed</option><option value="escalated">Escalated</option></select></div><div><label class="tiny"><b>Agency</b></label><select id="browseAgency"><option value="">All agencies</option><option value="DOT">NYC DOT</option><option value="DSNY">NYC Sanitation</option><option value="DEP">NYC DEP</option><option value="DPR">NYC Parks</option><option value="DOB">NYC Buildings</option></select><label class="tiny"><b>Sort</b></label><select id="browseSort"><option value="priority">Community Assist priority</option><option value="recent">Newest</option><option value="oldest">Oldest</option><option value="most_supported">Most supported</option></select><div class="row" style="margin-top:8px"><div class="grow"><label class="tiny"><b>Community district</b></label><input id="browseCommunityBoard" inputmode="numeric" placeholder="e.g. 404"/></div><div class="grow"><label class="tiny"><b>Council district</b></label><input id="browseCouncil" inputmode="numeric" placeholder="e.g. 21"/></div></div></div></div><div class="issue-actions"><button id="runBrowseSearch" class="primary">Search issues</button><button id="clearBrowseSearch">Clear filters</button></div><div id="browseIssuesMsg"></div><div id="browseIssuesResults"><p class="empty">Search Community Assist cases by public information.</p></div><div class="issue-actions"><button id="browseLoadMore" hidden>Load more</button></div></section>
+<section class="card"><div class="head"><div><div class="eyebrow">NEARBY COMMUNITY ISSUES</div><h2 id="areaTitle">Queens pilot sample area</h2></div><button id="refreshCommunity">Refresh</button></div><div id="communityFeed"><p class="empty">Loading…</p></div></section>
+
+
+
+<section id="trustCard" class="card"><div class="head"><div><div class="eyebrow">HOW COMMUNITY ASSIST DECIDES</div><h2>Transparent by design</h2></div><button id="refreshMethodology">Refresh</button></div><div id="methodologySummary"><p class="empty">Loading methodology…</p></div></section>
+
+<section class="card footer-note"><div><div class="eyebrow">PHOTO EVIDENCE</div><h2>Private evidence storage is live</h2><p class="tiny">Images are stored in signed-in users’ private folders and are not exposed in the public neighborhood feed.</p></div><span>LIVE</span></section>
+</main>
+
+<script type="module">import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.116.0'
+const SUPABASE_URL='https://ayqzdbmokchnsubbtbcz.supabase.co'
+const KEY='sb_publishable_bZLwTdxFFzOE6Rv7uNCPkA_kkKGUueB'
+const FRONTEND_RELEASE='20260911-evidence-privacy-v13'
+const supabase=createClient(SUPABASE_URL,KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}})
+const fn=n=>`${SUPABASE_URL}/functions/v1/${n}`
+const CATS=[
+['road_surface','Road & pothole','pothole|road damage|street condition|sinkhole|pavement'],['markings','Road markings & crosswalk','crosswalk|road marking|lane marking|faded paint'],['traffic_signal','Traffic signal or sign','traffic light|traffic signal|stop sign|street sign|signal timing'],['streetlight','Streetlight','streetlight|street light|lamp post|light pole'],['sidewalk','Sidewalk & accessibility','sidewalk|curb ramp|wheelchair|ada|trip hazard|pedestrian ramp'],['sanitation','Trash & illegal dumping','trash|garbage|illegal dumping|dirty condition|litter|missed collection'],['tree_park','Tree or park','tree|fallen branch|park|playground|park bench'],['water_sewer','Flooding, water & sewer','flood|flooding|sewer|catch basin|hydrant|water leak'],['construction','Construction & scaffolding','construction|scaffold|scaffolding|building work|blocked sidewalk'],['bike_transit','Bike or transit infrastructure','bike lane|bus shelter|bus stop|bike rack'],['noise_environment','Noise & environment','noise|odor|air pollution|smoke'],['other','Something else','']]
+let session=null,step=1,coords=null,area={lat:40.7343,lng:-73.8708},pendingPhoto='',duplicates=[],lastSuccessIssueId='',lastSuccessCaseCode='',safetyScreening='',areaIsUserChosen=false,watchCivic=null,reviewTab='triage',reviewQueues=null,moderationRefs=null,browseOffset=0,browseTotal=0
+const initialParams=new URLSearchParams(location.search)
+let pilotScenarios=[]
+let sharedCaseCode=String(initialParams.get('case')||'').trim().toUpperCase()
+let sharedCaseAction=String(initialParams.get('action')||'view').trim().toLowerCase()
+let validSharedCase=/^CA-[A-F0-9]{10}$/.test(sharedCaseCode)
+const $=id=>document.getElementById(id)
+const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))
+const actionLocks=new Set()
+let connectionHideTimer=null
+function errorMessage(e,fallback='Something went wrong.'){
+  const raw=String(e?.message||e||'').trim()
+  if(raw==='SIGN_IN_REQUIRED')return 'Sign in to continue.'
+  if(raw==='OFFLINE'||!navigator.onLine)return 'You appear to be offline. Your unfinished report is still on this device. Reconnect and continue.'
+  if(e?.name==='AbortError'||/timed? out|timeout/i.test(raw))return 'The connection is taking too long. Please try again.'
+  if(/failed to fetch|networkerror|network request failed|load failed/i.test(raw))return 'The connection was interrupted. Please check your connection and try again.'
+  return raw||fallback
+}
+async function fetchWithTimeout(url,options={},timeoutMs=20000){
+  const controller=new AbortController()
+  const timer=setTimeout(()=>controller.abort(),timeoutMs)
+  try{return await fetch(url,{...options,signal:controller.signal})}finally{clearTimeout(timer)}
+}
+function setBusy(button,busy,label='Working…'){
+  if(!button)return
+  if(busy){if(!button.dataset.idleLabel)button.dataset.idleLabel=button.textContent;button.disabled=true;button.classList.add('busy');button.textContent=label}
+  else{button.disabled=false;button.classList.remove('busy');if(button.dataset.idleLabel){button.textContent=button.dataset.idleLabel;delete button.dataset.idleLabel}}
+}
+async function runLocked(key,button,busyLabel,job){
+  if(actionLocks.has(key))return
+  actionLocks.add(key);setBusy(button,true,busyLabel)
+  try{return await job()}finally{actionLocks.delete(key);if(button?.isConnected)setBusy(button,false)}
+}
+function updateConnectivity(showOnline=false){
+  const banner=$('connectionBanner');if(!banner)return
+  clearTimeout(connectionHideTimer)
+  if(!navigator.onLine){banner.hidden=false;banner.classList.remove('online');banner.textContent='You are offline. Draft text stays on this device, but reports and verifications cannot be sent until you reconnect.';return}
+  if(showOnline){banner.hidden=false;banner.classList.add('online');banner.textContent='Back online. You can continue where you left off.';connectionHideTimer=setTimeout(()=>{banner.hidden=true;banner.classList.remove('online')},2800)}else banner.hidden=true
+}
+const UUID_RE=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+let reportSubmissionKey=''
+function makeSubmissionKey(){
+  if(typeof crypto?.randomUUID==='function')return crypto.randomUUID()
+  const b=new Uint8Array(16);crypto.getRandomValues(b);b[6]=(b[6]&15)|64;b[8]=(b[8]&63)|128
+  const h=[...b].map(x=>x.toString(16).padStart(2,'0')).join('')
+  return `${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`
+}
+function ensureSubmissionKey(){if(!UUID_RE.test(reportSubmissionKey))reportSubmissionKey=makeSubmissionKey();return reportSubmissionKey}
+function resetSubmissionKey(){reportSubmissionKey=makeSubmissionKey();return reportSubmissionKey}
+const LEGACY_REPORT_DRAFT_KEY='communityAssistReportDraftV1'
+const REPORT_DRAFT_KEY='communityAssistReportDraftV2'
+const REPORT_DRAFT_TTL=30*60*1000
+function saveReportDraft(){
+  try{
+    const data={
+      savedAt:Date.now(),
+      description:$('description')?.value||'',
+      publicSummary:$('publicSummary')?.value||'',
+      category:$('categoryOverride')?.value||'',
+      locationLabel:$('locationLabel')?.value||'',
+      locationPrecision:selectedLocationPrecision(),
+      submissionKey:ensureSubmissionKey()
+    }
+    const hasContent=data.description.trim()||data.publicSummary.trim()||data.locationLabel.trim()||data.category
+    if(!hasContent){localStorage.removeItem(REPORT_DRAFT_KEY);return}
+    localStorage.setItem(REPORT_DRAFT_KEY,JSON.stringify(data))
+    if($('draftStatus'))$('draftStatus').textContent='Draft saved on this device for up to 30 minutes. Photos and GPS coordinates are not stored.'
+  }catch{}
+}
+function clearReportDraft(){try{localStorage.removeItem(REPORT_DRAFT_KEY)}catch{};if($('draftStatus'))$('draftStatus').textContent='Unfinished report text can be kept on this device for up to 30 minutes during sign-in. Photos, email, and GPS coordinates are never stored in the temporary draft.'}
+function restoreReportDraft(){
+  try{
+    localStorage.removeItem(LEGACY_REPORT_DRAFT_KEY)
+    const raw=localStorage.getItem(REPORT_DRAFT_KEY);if(!raw)return false
+    const d=JSON.parse(raw)
+    if(!d?.savedAt||Date.now()-Number(d.savedAt)>REPORT_DRAFT_TTL){clearReportDraft();resetSubmissionKey();return false}
+    reportSubmissionKey=UUID_RE.test(String(d.submissionKey||''))?String(d.submissionKey):makeSubmissionKey()
+    if($('description'))$('description').value=String(d.description||'')
+    if($('publicSummary'))$('publicSummary').value=String(d.publicSummary||'').slice(0,240)
+    updatePublicSummaryCount()
+    if($('categoryOverride'))$('categoryOverride').value=String(d.category||'')
+    if($('locationLabel'))$('locationLabel').value=String(d.locationLabel||'')
+    const precision=['exact','approximate','hidden'].includes(String(d.locationPrecision))?String(d.locationPrecision):'exact'
+    const radio=document.querySelector(`input[name="locationPrecision"][value="${precision}"]`);if(radio)radio.checked=true
+    updateLocationPrivacyNote()
+    route()
+    if($('toLocation'))$('toLocation').disabled=!$('description').value.trim()
+    if($('draftStatus'))$('draftStatus').textContent='Recovered a report draft saved on this device. It will expire 30 minutes after it was saved.'
+    return true
+  }catch{clearReportDraft();resetSubmissionKey();return false}
+}
+function classify(t){t=t.toLowerCase();let best=CATS[CATS.length-1],score=0;for(const c of CATS){if(!c[2])continue;const hits=c[2].split('|').filter(k=>t.includes(k)).length;if(hits>score){best=c;score=hits}}return{key:best[0],label:best[1],confidence:score>=2?'high':score===1?'medium':'low'}}
+function route(){const manual=$('categoryOverride')?.value||'';let r;if(manual){const c=CATS.find(x=>x[0]===manual)||CATS[CATS.length-1];r={key:c[0],label:c[1],confidence:'resident'};$('routeBox').innerHTML=`<b>${esc(r.label)}</b><small>Resident selected · Community Assist will use this category.</small>`}else{r=classify($('description').value);$('routeBox').innerHTML=`<b>${esc(r.label)}</b><small>${r.confidence} confidence${r.confidence==='low'?' · jurisdiction check required':''}</small>`}return r}
+function selectedLocationPrecision(){return document.querySelector('input[name="locationPrecision"]:checked')?.value||'exact'}
+function updateLocationPrivacyNote(){const v=selectedLocationPrecision();const text=v==='approximate'?'Public display: approximate block-level area.':v==='hidden'?'Public display: no map point. Exact coordinates remain private.':'Public display: exact issue location.';if($('locationPrivacyNote'))$('locationPrivacyNote').textContent=text;const label=String($('locationLabel')?.value||'').trim();const preview=v==='hidden'?'Public location withheld':v==='approximate'?'Approximate location':(label||'Add a location label to preview what residents will see.');if($('publicLocationPreviewText'))$('publicLocationPreviewText').textContent=preview}
+function updatePublicSummaryCount(){const el=$('publicSummary');const n=String(el?.value||'').length;if($('publicSummaryCount'))$('publicSummaryCount').textContent=`${n}/240`}
+function publicLocationForReview(){const v=selectedLocationPrecision();const label=String($('locationLabel')?.value||'').trim();return v==='hidden'?'Public location withheld':v==='approximate'?'Approximate location':(label||'Exact location label not added')}
+function hideSubmitReview(){if($('submitReviewCard'))$('submitReviewCard').hidden=true}
+function showSubmitReview(){
+  if(!$('description').value.trim()){notice('flowMsg','Describe the problem before reviewing.',true);return}
+  if(!coords){notice('flowMsg','Add the issue location before reviewing.',true);return}
+  if(!safetyScreening){notice('flowMsg','Answer the safety question before reviewing.',true);return}
+  if(safetyScreening==='danger'&&!$('safetyAck')?.checked){notice('flowMsg','Handle the emergency first, then acknowledge the safety notice if you still want to document the issue.',true);return}
+  const r=route(),summary=String($('publicSummary')?.value||'').trim(),photo=Boolean($('reportPhoto')?.files?.[0]||pendingPhoto),sharePhoto=Boolean($('reportShareConsent')?.checked)
+  $('submitReviewContent').innerHTML=`<div><b>Category</b><p class="tiny">${esc(r.label)}</p></div><div><b>Public location</b><p class="tiny">${esc(publicLocationForReview())}</p></div><div><b>Public summary</b><p class="tiny">${summary?esc(summary):'No public summary. The case will rely on category, status, and the public location setting.'}</p></div><div><b>Photo evidence</b><p class="tiny">${!photo?'No photo attached.':sharePhoto?'Original stays private. A reviewed, metadata-stripped copy may be public.':'Photo stays private.'}</p></div>`
+  $('submitReviewCard').hidden=false
+  $('submitReviewCard').scrollIntoView({behavior:'smooth',block:'nearest'})
+  notice('flowMsg','')
+}
+function setStep(n){step=n;[1,2,3,4].forEach(i=>{$('step'+i).hidden=i!==n;$('s'+i).classList.toggle('on',i<=n)});$('stepLabel').textContent=`Step ${n} of 4`}
+function notice(id,msg,err=false){$(id).innerHTML=msg?`<div class="notice ${err?'err':''}">${esc(msg)}</div>`:''}
+async function getToken(){const{data}=await supabase.auth.getSession();return data.session?.access_token||''}
+async function callAuth(name,body){if(!navigator.onLine)throw new Error('OFFLINE');const token=await getToken();if(!token)throw new Error('SIGN_IN_REQUIRED');const res=await fetchWithTimeout(fn(name),{method:'POST',headers:{'Content-Type':'application/json',apikey:KEY,Authorization:`Bearer ${token}`},body:JSON.stringify(body)},22000);const payload=await res.json().catch(()=>({}));return{res,payload}}
+async function fetchAuth(name,params={}){if(!navigator.onLine)throw new Error('OFFLINE');const token=await getToken();if(!token)throw new Error('SIGN_IN_REQUIRED');const u=new URL(fn(name));Object.entries(params).forEach(([k,v])=>{if(v!==undefined&&v!==null&&v!=='')u.searchParams.set(k,String(v))});const res=await fetchWithTimeout(u,{headers:{apikey:KEY,Authorization:`Bearer ${token}`}},22000);const payload=await res.json().catch(()=>({}));return{res,payload}}
+async function upload(file,purpose){if(!file)return'';if(!navigator.onLine)throw new Error('OFFLINE');const{data}=await supabase.auth.getSession();const user=data.session?.user;if(!user)throw new Error('SIGN_IN_REQUIRED');if(!file.type.startsWith('image/'))throw new Error('Evidence must be an image.');if(file.size>10*1024*1024)throw new Error('Evidence photos must be 10 MB or smaller.');let ext=(file.name.split('.').pop()||file.type.split('/')[1]||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'');if(ext==='jpeg')ext='jpg';const path=`${user.id}/${purpose}/${crypto.randomUUID()}.${ext}`;const{error}=await supabase.storage.from('issue-evidence').upload(path,file,{contentType:file.type,upsert:false});if(error)throw error;return path}
+function buildBrowseCategories(){if(!$('browseCategory'))return;$('browseCategory').innerHTML='<option value="">All categories</option>'+CATS.map(c=>`<option value="${esc(c[0])}">${esc(c[1])}</option>`).join('')}
+function browseParams(offset=0){const q=new URLSearchParams();const text=String($('browseQuery')?.value||'').trim();const cat=$('browseCategory')?.value||'',status=$('browseStatus')?.value||'',agency=$('browseAgency')?.value||'',sort=$('browseSort')?.value||'priority',cb=String($('browseCommunityBoard')?.value||'').trim(),cc=String($('browseCouncil')?.value||'').trim();if(text)q.set('q',text);if(cat)q.set('categories',cat);if(status)q.set('statuses',status);if(agency)q.set('agencies',agency);if(cb)q.set('communityBoard',cb);if(cc)q.set('councilDistrict',cc);q.set('sort',sort);q.set('limit','20');q.set('offset',String(offset));return q}
+function renderBrowseItems(items,append=false){const box=$('browseIssuesResults');if(!box)return;const html=items.map(i=>`<article class="issue"><div class="badges">${i.caseCode?`<span class="case-code">${esc(i.caseCode)}</span>`:''}<span class="badge">${esc(i.categoryLabel||i.categoryKey||'Issue')}</span><span class="badge">${esc(String(i.communityStatus||'reported').replaceAll('_',' '))}</span>${i.agency?`<span class="badge blue">${esc(i.agency)}</span>`:''}</div><h3>${esc(i.title||'Community issue')}</h3>${i.publicSummary?`<p>${esc(i.publicSummary)}</p>`:''}<p>${esc(i.locationLabel||'Public location withheld')}</p><div class="stats"><span><b>${Number(i.supporterCount||0)}</b> supporters</span><span><b>${Number(i.verifierCount||0)}</b> verifiers</span><span><b>${Number(i.ageDays||0)}</b> days</span>${i.communityDistrictCode?`<span>CD <b>${esc(i.communityDistrictCode)}</b></span>`:''}${i.councilDistrict?`<span>Council <b>${esc(i.councilDistrict)}</b></span>`:''}</div><div class="issue-actions"><button data-browse-open="${esc(i.caseCode||'')}">Open case</button>${i.caseCode?`<button data-browse-share="${esc(i.caseCode)}">Share</button>`:''}</div></article>`).join('');if(append)box.insertAdjacentHTML('beforeend',html);else box.innerHTML=html||'<p class="empty">No public Community Assist cases matched these filters.</p>';box.querySelectorAll('[data-browse-open]').forEach(b=>b.onclick=()=>{if(!b.dataset.browseOpen)return;setSharedCase(b.dataset.browseOpen,'view',true);loadSharedCase();$('sharedCaseCard').scrollIntoView({behavior:'smooth',block:'start'})});box.querySelectorAll('[data-browse-share]').forEach(b=>b.onclick=()=>shareCase('',b.dataset.browseShare,'view'))}
+async function loadBrowse(reset=true){if(reset){browseOffset=0;browseTotal=0;$('browseIssuesResults').innerHTML='<div class="notice">Searching public Community Assist cases…</div>'}notice('browseIssuesMsg','');try{const u=new URL(fn('issue-search'));u.search=browseParams(browseOffset).toString();const r=await fetchWithTimeout(u,{headers:{apikey:KEY}},18000),p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to search issues.');browseTotal=Number(p.total||0);const items=p.items||[];renderBrowseItems(items,!reset);browseOffset+=items.length;$('browseLoadMore').hidden=browseOffset>=browseTotal||!items.length;notice('browseIssuesMsg',`${browseTotal} public case${browseTotal===1?'':'s'} matched.`)}catch(e){notice('browseIssuesMsg',e.message,true);if(reset)$('browseIssuesResults').innerHTML='<p class="empty">Search could not be completed.</p>'}}
+function clearBrowse(){if($('browseQuery'))$('browseQuery').value='';if($('browseCategory'))$('browseCategory').value='';if($('browseStatus'))$('browseStatus').value='';if($('browseAgency'))$('browseAgency').value='';if($('browseSort'))$('browseSort').value='priority';if($('browseCommunityBoard'))$('browseCommunityBoard').value='';if($('browseCouncil'))$('browseCouncil').value='';loadBrowse(true)}
+async function loadArea(){notice('flowMsg','');loadPulse();try{const c=new URL(fn('public-issues'));c.searchParams.set('lat',area.lat);c.searchParams.set('lng',area.lng);c.searchParams.set('radius','1500');c.searchParams.set('limit','30');const cr=await fetch(c,{headers:{apikey:KEY}});const cb=await cr.json();renderCommunity(cb.issues||[])}catch(e){$('communityFeed').innerHTML=`<p class="empty">${esc(e.message)}</p>`}}
+async function loadPulse(){
+  try{
+    const u=new URL(fn('neighborhood-pulse'))
+    u.searchParams.set('lat',area.lat);u.searchParams.set('lng',area.lng);u.searchParams.set('radius','1500')
+    const r=await fetch(u,{headers:{apikey:KEY}});const p=await r.json()
+    if(!r.ok)throw new Error(p.error||'Neighborhood pulse is temporarily unavailable.')
+    $('pulseMetrics').innerHTML=`<span><b>${p.totalIssues||0}</b> total</span><span><b>${p.unresolvedIssues||0}</b> unresolved</span><span><b>${p.awaitingVerification||0}</b> awaiting verification</span><span><b>${p.linkedToOfficialRequest||0}</b> linked to official</span><span><b>${p.totalSupportSignals||0}</b> support signals</span>`
+    const items=p.priorityIssues||[]
+    $('pulseFeed').innerHTML=items.length?`<div class="route"><b>Highest priority nearby</b><small>Priority combines safety, age, resident support, and unresolved official closure.</small></div>`+items.slice(0,5).map(i=>`<article class="issue"><div class="badges"><span class="badge">${esc(i.categoryLabel||'Issue')}</span><span class="badge">priority ${i.priorityScore||0}</span></div><h3>${esc(i.title)}</h3><p>${esc(i.locationLabel||Math.round(i.distanceMeters||0)+' m away')}</p><div class="stats"><span><b>${i.supporterCount||0}</b> supporters</span><span><b>${i.ageDays||0}</b> days</span><span><b>${esc((i.verificationState||'unverified').replaceAll('_',' '))}</b></span></div></article>`).join(''):'<p class="empty">No Community Assist issues are in this radius yet.</p>'
+  }catch(e){$('pulseFeed').innerHTML=`<p class="empty">${esc(e.message)}</p>`}
+}
+function renderCommunity(items){if(!items.length){$('communityFeed').innerHTML='<p class="empty">No Community Assist issues found in this radius yet.</p>';return}$('communityFeed').innerHTML=items.map(i=>{const code=i.case_code||i.caseCode||'';return `<article class="issue"><div class="badges"><span class="badge">COMMUNITY ASSIST</span>${code?`<span class="case-code">${esc(code)}</span>`:''}${i.is_recurrence?'<span class="badge">RECURRENCE</span>':''}<span class="badge">${esc((i.verification_state||'unverified').replaceAll('_',' '))}</span></div><h3>${esc(i.title)}</h3>${i.public_summary?`<p>${esc(i.public_summary)}</p>`:''}<p>${esc(i.location_label||Math.round(i.distance_m||0)+' m away')}</p><div class="stats"><span><b>${i.supporter_count||0}</b> supporters</span><span><b>${i.verifier_count||0}</b> verifiers</span><span><b>${esc(i.official_status||'Not linked')}</b> official</span></div><div class="issue-actions"><button data-public-detail="${i.issue_id}">Case details</button></div><div class="verify"><span class="tiny"><b>What do you see now?</b></span><label class="mini">📷 Evidence<input id="vf_${i.issue_id}" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"></label><label class="tiny consent"><input id="vshare_${i.issue_id}" type="checkbox"/> public after review</label><button data-v="verified_fixed" data-id="${i.issue_id}">Fixed</button><button data-v="partly_fixed" data-id="${i.issue_id}">Partly</button><button data-v="still_broken" data-id="${i.issue_id}">Still broken</button></div><div id="publicdetail_${i.issue_id}"></div></article>`}).join('');document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>verifyNow(b.dataset.id,b.dataset.v,b));document.querySelectorAll('[data-public-detail]').forEach(b=>b.onclick=()=>loadPublicDetail(b.dataset.publicDetail))}
+async function verifyNow(id,status,button){if(!session){showAuth();return}return runLocked('verify:'+id,button,'Saving…',async()=>{try{const file=$('vf_'+id)?.files?.[0];const photo=file?await upload(file,`verification/${id}`):'';const allowPublicEvidence=Boolean($('vshare_'+id)?.checked);const{res,payload}=await callAuth('verify-issue',{issueId:id,status,photoPath:photo,allowPublicEvidence});if(!res.ok)throw new Error(payload.error||'Unable to save verification.');const total=Number(payload.totalVerifiers||1),reached=Boolean(payload.consensusReached);await loadArea();await loadMine();await loadResidentHome();const detail=reached?`Community consensus is now ${String(payload.verificationState||status).replaceAll('_',' ')}.`:`${total} independent verification${total===1?'':'s'} recorded. Another independent resident may still be needed.`;$('flowMsg').innerHTML=`<div class="success tap-status"><b>Verification saved.</b><br>${esc(detail)}</div>${reached?'':`<div class="issue-actions"><button id="areaVerifyShare" class="primary">Invite another resident to verify</button></div>`}`;if($('areaVerifyShare'))$('areaVerifyShare').onclick=()=>shareCase(id,'','verify')}catch(e){notice('flowMsg',errorMessage(e,'Unable to save verification.'),true)}})}
+async function loadMine(){
+  if(!session){$('myCard').hidden=true;return}
+  $('myCard').hidden=false
+  try{
+    const token=await getToken()
+    const r=await fetch(fn('my-issues'),{headers:{apikey:KEY,Authorization:`Bearer ${token}`}})
+    const p=await r.json()
+    if(!r.ok)throw new Error(p.error||'Unable to load tracked issues.')
+    const items=p.issues||[]
+    $('myFeed').innerHTML=items.length?items.map(i=>{
+      const linked=i.officialLink?.linked,claim=i.officialSubmissionClaim,code=i.caseCode||''
+      const trust=i.officialLink?.trustLabel||''
+      const official=linked?`<div class="route"><b>${esc(trust||'Official request linked')}</b><small>${esc(i.officialLink.sourceSystem||'official')} · ${esc(i.officialLink.externalRequestId||'')} · ${esc(i.officialLink.status||'Unknown')}${i.officialLink.agencyName?' · '+esc(i.officialLink.agencyName):''}</small>${i.officialLink.resolution?`<p class="tiny">${esc(i.officialLink.resolution)}</p>`:''}</div>`:''
+      const claimBlock=!linked&&claim?`<div class="route"><b>Official reference: ${esc((claim.validationStatus||'pending').replaceAll('_',' '))}</b><small>${esc(claim.externalRequestId||'')}${claim.validationMessage?' · '+esc(claim.validationMessage):''}</small></div>`:''
+      const key=i.nextAction?.key||'track'
+      let primaryAction=''
+      if(key==='routing_context')primaryAction=`<button class="primary" data-route-context="${i.issueId}">${esc(i.nextAction?.label||'Answer routing question')}</button>`
+      else if(key==='official_reporting')primaryAction=`<button class="primary" data-official-path="${i.issueId}">${esc(i.nextAction?.label||'Report this officially')}</button>`
+      else if(key==='official_reference_pending'||key==='official_reference_confirmed')primaryAction=`<button data-official-path="${i.issueId}">View official reporting details</button>`
+      else if(key==='check_official_match')primaryAction=`<button class="primary" data-m="${i.issueId}">${esc(i.nextAction?.label||'Check official records')}</button>`
+      else if(key==='refresh_official'||linked)primaryAction=`<button class="primary" data-refresh311="${i.issueId}">Refresh official status</button>`
+      else if(key==='routing_triage')primaryAction='<button disabled>Routing review pending</button>'
+      else if(key==='emergency_guidance')primaryAction='<a class="linkbtn" href="tel:911">Call 911</a>'
+      const notifyLabel=i.notificationsEnabled===false?'Unmute updates':'Mute updates'
+      return `<article class="issue ${i.notificationsEnabled===false?'muted':''}"><div class="badges"><span class="badge">TRACKING</span>${code?`<span class="case-code">${esc(code)}</span>`:''}${i.isRecurrence?'<span class="badge">RECURRENCE</span>':''}<span class="badge">${esc((i.verificationState||'unverified').replaceAll('_',' '))}</span>${linked?`<span class="badge blue">${esc(trust||'OFFICIAL LINK')}</span>`:''}${claim&&!linked?'<span class="badge blue">REFERENCE SAVED</span>':''}</div><h3>${esc(i.title)}</h3><p>${esc(i.locationLabel||'Location hidden')}</p><div class="stats"><span><b>${i.supporterCount||0}</b> supporters</span><span><b>${i.verifierCount||0}</b> verifiers</span><span><b>${i.ageDays||0}</b> days</span><span><b>${esc(i.officialStatus||'Not linked')}</b> official</span>${i.civic?.communityDistrictCode?`<span>Community District <b>${esc(i.civic.communityDistrictCode)}</b></span>`:''}${i.civic?.councilDistrict?`<span>Council <b>${esc(i.civic.councilDistrict)}</b></span>`:''}</div>${official}${claimBlock}<div id="action_${i.issueId}" class="action-center"><small>Loading next action…</small></div><div class="issue-actions"><button data-progress="${i.issueId}">Case progress</button><button data-share-case="${i.issueId}" data-case-code="${esc(code)}">Share case</button>${i.verificationState!=='verified_fixed'?`<button data-share-verify="${i.issueId}" data-case-code="${esc(code)}">Ask neighbor to verify</button>`:''}<button data-timeline="${i.issueId}">Details & timeline</button><button data-field-update="${i.issueId}">Add field update</button><button data-notify-toggle="${i.issueId}" data-enabled="${i.notificationsEnabled!==false}">${notifyLabel}</button>${i.escalation?.ready?`<button data-e="${i.issueId}">Prepare escalation draft</button>`:''}</div><div id="routing_${i.issueId}"></div><div id="match_${i.issueId}"></div><div id="field_${i.issueId}"></div><div id="progress_${i.issueId}"></div><div id="timeline_${i.issueId}"></div></article>`
+    }).join(''):'<p class="empty">You are not tracking any issues yet.</p>'
+    document.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>prepareEsc(b.dataset.e))
+    document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>check311(b.dataset.m))
+    document.querySelectorAll('[data-refresh311]').forEach(b=>b.onclick=()=>refresh311(b.dataset.refresh311))
+    document.querySelectorAll('[data-timeline]').forEach(b=>b.onclick=()=>loadTimeline(b.dataset.timeline))
+    document.querySelectorAll('[data-route-context]').forEach(b=>b.onclick=()=>loadRoutingContext(b.dataset.routeContext))
+    document.querySelectorAll('[data-official-path]').forEach(b=>b.onclick=()=>loadOfficialReportingPath(b.dataset.officialPath))
+    document.querySelectorAll('[data-field-update]').forEach(b=>b.onclick=()=>showFieldUpdate(b.dataset.fieldUpdate))
+    document.querySelectorAll('[data-notify-toggle]').forEach(b=>b.onclick=()=>toggleIssueNotifications(b.dataset.notifyToggle,b.dataset.enabled==='true'))
+    document.querySelectorAll('[data-progress]').forEach(b=>b.onclick=()=>loadCaseProgress(b.dataset.progress))
+    document.querySelectorAll('[data-share-case]').forEach(b=>b.onclick=()=>shareCase(b.dataset.shareCase,b.dataset.caseCode,'view'))
+    document.querySelectorAll('[data-share-verify]').forEach(b=>b.onclick=()=>shareCase(b.dataset.shareVerify,b.dataset.caseCode,'verify'))
+    items.forEach(i=>loadCaseActionCenter(i.issueId))
+  }catch(e){$('myFeed').innerHTML=`<p class="empty">${esc(e.message)}</p>`}
+}
+async function loadCaseActionCenter(id){
+  const box=$('action_'+id);if(!box||!session)return
+  try{
+    const{res,payload}=await fetchAuth('case-action-center?issueId='+encodeURIComponent(id))
+    if(!res.ok)throw new Error(payload.error||'Unable to load next action.')
+    const a=payload.primaryAction||{key:'track',label:'Keep tracking',reason:''}
+    let actionButton=''
+    if(a.key==='routing_context')actionButton=`<button class="primary" onclick="loadRoutingContext('${id}')">Answer</button>`
+    else if(a.key==='official_reporting'||a.key==='official_reference_pending')actionButton=`<button class="primary" onclick="loadOfficialReportingPath('${id}')">Open path</button>`
+    else if(a.key==='verify'||a.key==='invite_verification')actionButton=`<button class="primary" onclick="showCaseVerification('${id}')">Verify</button>`
+    else if(a.key==='service_window_followup'||a.key==='refresh_official')actionButton=`<button class="primary" onclick="refresh311('${id}')">Check status</button>`
+    else if(a.key==='prepare_escalation')actionButton=`<button class="primary" onclick="prepareEsc('${id}')">Prepare</button>`
+    else if(a.key==='emergency_guidance')actionButton='<a class="linkbtn primary" href="tel:911">Call 911</a>'
+    else if(a.key==='routing_triage')actionButton='<button disabled>Review pending</button>'
+    const publicSettingsButton=payload.permissions?.canEditPublicSettings?`<button onclick="showPublicSettings('${id}')">Public settings</button>`:''
+    box.innerHTML=`<div class="primary-call"><div><span class="eyebrow">NEXT BEST ACTION</span><b>${esc(a.label||'Keep tracking')}</b><small>${esc(a.reason||'')}</small></div>${actionButton}</div><div class="issue-actions">${publicSettingsButton}<button onclick="showDuplicateSuggestion('${id}')">Suggest duplicate</button></div><div id="verify_action_${id}"></div><div id="public_settings_${id}"></div><div id="duplicate_suggest_${id}"></div>`
+  }catch(e){box.innerHTML=`<small>${esc(e.message)}</small>`}
+}
+function showCaseVerification(id){const box=$('verify_action_'+id);if(!box)return;box.innerHTML=`<div class="verify-choices"><button onclick="verifyNow('${id}','verified_fixed')">✓ Fixed</button><button onclick="verifyNow('${id}','partly_fixed')">◐ Partly fixed</button><button onclick="verifyNow('${id}','still_broken')">✕ Still broken</button></div><p class="tiny">Your verification is one independent resident observation. Community Assist does not let one person set the final public consensus.</p>`}
+async function showPublicSettings(id){
+  const box=$('public_settings_'+id);if(!box||!session)return
+  if(box.innerHTML.trim()){box.innerHTML='';return}
+  box.innerHTML='<div class="notice">Loading public settings…</div>'
+  try{
+    const{res,payload}=await fetchAuth('case-public-settings?issueId='+encodeURIComponent(id));if(!res.ok)throw new Error(payload.error||'Unable to load public settings.')
+    const summary=String(payload.publicSummary||''),precision=String(payload.locationPrecision||'exact'),locked=payload.moderationLocationLocked===true
+    box.innerHTML=`<div class="field-panel"><b>Public case settings</b><p class="tiny">Your full report and private exact coordinates do not change.</p>${payload.isPublic===false?'<div class="notice">This case is currently hidden from public view. Saving these settings will not republish it.</div>':''}${locked?'<div class="notice err"><b>Public location locked by moderation.</b><br>The location stays hidden unless a moderator clears the privacy lock.</div>':''}<label class="tiny"><b>Public summary</b></label><textarea id="pubsum_${id}" maxlength="240" style="min-height:72px">${esc(summary)}</textarea><p id="pubsumcount_${id}" class="tiny">${summary.length}/240</p><label class="tiny"><b>Public location</b></label><select id="pubprecision_${id}" ${locked?'disabled':''}><option value="exact" ${precision==='exact'?'selected':''}>Exact</option><option value="approximate" ${precision==='approximate'?'selected':''}>Approximate</option><option value="hidden" ${precision==='hidden'?'selected':''}>Hidden</option></select><p id="pubpreview_${id}" class="tiny">Current public display: ${esc(payload.publicLocationLabel||'Public location withheld')}</p><div class="issue-actions"><button class="primary" onclick="savePublicSettings('${id}')">Save public settings</button><button onclick="showPublicSettings('${id}')">Cancel</button></div><div id="pubmsg_${id}"></div></div>`
+    $('pubsum_'+id).oninput=()=>{$('pubsumcount_'+id).textContent=`${$('pubsum_'+id).value.length}/240`}
+    $('pubprecision_'+id).onchange=()=>{const v=$('pubprecision_'+id).value;$('pubpreview_'+id).textContent='Public display after save: '+(v==='hidden'?'Public location withheld':v==='approximate'?'Approximate location':'Exact location label')}
+  }catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function savePublicSettings(id){
+  const msg=$('pubmsg_'+id);if(msg)msg.innerHTML='<div class="notice">Saving public settings…</div>'
+  try{
+    const{res,payload}=await callAuth('case-public-settings',{issueId:id,publicSummary:String($('pubsum_'+id)?.value||'').trim(),locationPrecision:$('pubprecision_'+id)?.value||'exact'});if(!res.ok)throw new Error(payload.error||'Unable to save public settings.')
+    if(msg)msg.innerHTML=`<div class="notice"><b>Public settings saved.</b><br>Public location: ${esc(payload.publicLocationLabel||'updated')}.</div>`
+    await loadArea();await loadCaseActionCenter(id)
+  }catch(e){if(msg)msg.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+function showDuplicateSuggestion(issueId){
+  if(!session){showAuth();return}
+  const box=$('duplicate_suggest_'+issueId)||$('sharedDuplicateBox');if(!box)return
+  if(box.innerHTML.trim()){box.innerHTML='';return}
+  box.innerHTML=`<div class="field-panel"><b>Suggest a duplicate</b><p class="tiny">Enter the other Community Assist case code. Both cases stay separate until a moderator reviews the proposal.</p><input id="dupecode_${esc(issueId)}" maxlength="13" placeholder="CA-XXXXXXXXXX" style="text-transform:uppercase"><textarea id="dupereason_${esc(issueId)}" maxlength="1000" placeholder="Optional: why you think these are the same physical problem"></textarea><div class="issue-actions"><button class="primary" data-preview-dupe="${esc(issueId)}">Check other case</button><button data-cancel-dupe>Cancel</button></div><div id="dupemsg_${esc(issueId)}"></div></div>`
+  box.querySelector('[data-preview-dupe]')?.addEventListener('click',()=>previewDuplicateSuggestion(issueId,box))
+  box.querySelector('[data-cancel-dupe]')?.addEventListener('click',()=>{box.innerHTML=''})
+}
+async function previewDuplicateSuggestion(issueId,box){
+  const code=String($('dupecode_'+issueId)?.value||'').trim().toUpperCase()
+  const reason=String($('dupereason_'+issueId)?.value||'').trim()
+  const msg=$('dupemsg_'+issueId);if(!/^CA-[A-F0-9]{10}$/.test(code)){if(msg)msg.innerHTML='<div class="notice err">Enter a case code like CA-XXXXXXXXXX.</div>';return}
+  if(msg)msg.innerHTML='<div class="notice">Loading the other public case…</div>'
+  try{
+    const u=new URL(fn('issue-detail'));u.searchParams.set('caseCode',code)
+    const r=await fetch(u,{headers:{apikey:KEY}}),p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to load the other case.')
+    const otherId=p.canonicalIssueId||'';if(!otherId)throw new Error('The other case could not be resolved.')
+    if(otherId===issueId)throw new Error('That code already points to this same case.')
+    const i=p.issue||{},summary=String(i.public_summary||'').trim(),loc=i.location_label||'Public location withheld'
+    msg.innerHTML=`<div class="review-item"><div class="badges"><span class="case-code">${esc(p.caseCode||code)}</span><span class="badge">${esc(i.category_label||i.category_key||'Issue')}</span></div><h3>${esc(i.title||'Community issue')}</h3>${summary?`<p>${esc(summary)}</p>`:''}<p>${esc(loc)}</p><div class="issue-actions"><button class="primary" data-confirm-dupe>Send duplicate suggestion</button><button data-cancel-preview>Cancel</button></div><p class="tiny">This does not merge the cases. A moderator must review them first.</p></div>`
+    msg.querySelector('[data-confirm-dupe]')?.addEventListener('click',()=>submitDuplicateSuggestion(issueId,otherId,reason,box))
+    msg.querySelector('[data-cancel-preview]')?.addEventListener('click',()=>{msg.innerHTML=''})
+  }catch(e){if(msg)msg.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function submitDuplicateSuggestion(issueId,candidateIssueId,reason,box){
+  const msg=$('dupemsg_'+issueId);if(msg)msg.innerHTML='<div class="notice">Sending duplicate suggestion for review…</div>'
+  try{
+    const{res,payload}=await callAuth('propose-duplicate',{issueId,candidateIssueId,reason})
+    if(!res.ok)throw new Error(payload.error||payload.message||'Unable to submit duplicate suggestion.')
+    box.innerHTML=`<div class="success"><b>Duplicate suggestion sent for review.</b><br>${esc(payload.message||'The cases remain separate until a moderator decides.')}${payload.distanceDisplay?`<br><small>${esc(payload.distanceDisplay)}</small>`:''}</div>`
+    await loadOwnerOps()
+  }catch(e){if(msg)msg.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+
+async function shareCase(id,caseCode,mode='view'){
+  try{
+    let code=String(caseCode||'').trim()
+    if(!code){const{res,payload}=await fetchAuth('case-action-center?issueId='+encodeURIComponent(id));if(!res.ok)throw new Error(payload.error||'Unable to load case reference.');code=payload.canonical?.caseCode||''}
+    if(!code)throw new Error('Case reference is unavailable.')
+    const u=new URL(fn('share-case'));u.searchParams.set('caseCode',code)
+    const r=await fetch(u,{headers:{apikey:KEY}}),p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to prepare the case summary.')
+    const action=mode==='verify'?'verify':'view'
+    let link=''
+    if(location.protocol==='http:'||location.protocol==='https:'){
+      const deep=new URL(location.origin+location.pathname)
+      deep.searchParams.set('case',code)
+      deep.searchParams.set('action',action)
+      link=deep.toString()
+    }
+    const prefix=mode==='verify'?'Can you verify what you see at this Community Assist case?':'Community Assist case'
+    const text=`${prefix}\n\n${p.shareText||`${code} · Community Assist`}${link?`\n\nOpen case: ${link}`:''}`
+    if(navigator.share){await navigator.share({title:`Community Assist ${code}`,text})}
+    else if(navigator.clipboard){await navigator.clipboard.writeText(text);notice('flowMsg',mode==='verify'?`${code} verification invite copied to clipboard.`:`${code} summary copied to clipboard.`)}
+    else{window.prompt('Copy this Community Assist case:',text)}
+  }catch(e){if(e?.name!=='AbortError')notice('flowMsg',e.message||'Unable to share this case.',true)}
+}
+async function loadCaseProgress(id){
+  const box=$('progress_'+id);if(!box||!session)return
+  box.innerHTML='<div class="notice">Loading case progress…</div>'
+  try{
+    const{res,payload}=await fetchAuth('case-progress?issueId='+encodeURIComponent(id))
+    if(!res.ok)throw new Error(payload.error||'Unable to load case progress.')
+    const steps=payload.steps||[]
+    const bars=steps.map(s=>`<span class="${s.state==='complete'?'done':(s.state==='current'||s.state==='blocked')?'now':''}"></span>`).join('')
+    box.innerHTML=`<div class="trustbox"><b>Case progress · ${payload.progressPercent||0}%</b><div class="progressline">${bars}</div><div class="progress-steps">${steps.map(s=>`<div class="progress-step ${esc(s.state||'')}"><b>${esc(s.label||'Step')}</b><small>${esc(s.detail||'')}</small></div>`).join('')}</div></div>`
+  }catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function loadTimeline(id){const box=$('timeline_'+id);if(!box)return;box.innerHTML='<div class="notice">Loading case details…</div>';try{const u=new URL(fn('issue-detail'));u.searchParams.set('issueId',id);const r=await fetch(u,{headers:{apikey:KEY}});const p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to load case details.');const events=p.timeline||[],official=p.officialRequests||[],verification=p.verification||{},ex=p.serviceExpectations?.expectations||[],guidance=p.processGuidance?.items||[];const expBlock=ex.length?`<div class="trustbox"><b>Published service guidance</b>${ex.map(x=>`<div class="guidance"><b>${esc(x.label||'Official guidance')}</b><small>${esc(x.detail||'')}</small>${x.clockStarted?`<p class="tiny">Official clock ${x.windowPassed?'· published window passed':x.dueAt?'· due '+new Date(x.dueAt).toLocaleString():'started'}</p>`:'<p class="tiny">Official service clock has not started yet.</p>'}${x.caveat?`<p class="tiny">${esc(x.caveat)}</p>`:''}</div>`).join('')}</div>`:'';const guideBlock=guidance.length?`<div class="trustbox"><b>Official process guidance</b>${guidance.map(g=>`<div class="guidance"><b>${esc(g.label||g.guidanceType||'Official process')}</b><small>${esc(g.detail||'')}</small>${g.caveat?`<p class="tiny">${esc(g.caveat)}</p>`:''}</div>`).join('')}</div>`:'';box.innerHTML=`<div class="route"><b>${esc(p.caseCode||'Community Assist case')}</b><small>${p.supporterCount||0} supporters · ${verification.total||0} verifiers · ${official.length} official request${official.length===1?'':'s'}</small></div>${expBlock}${guideBlock}<div class="route"><b>Accountability timeline</b><small>Public, curated lifecycle history</small></div>`+(events.length?events.slice(0,14).map(e=>`<div class="notice"><b>${esc(e.title||((e.type||'status').replaceAll('_',' ')))}</b>${e.body?`<br>${esc(e.body)}`:''}<br><small>${esc(e.source||'Community Assist')} · ${new Date(e.occurredAt||e.observedAt).toLocaleString()}</small></div>`).join(''):'<div class="notice">No timeline events yet.</div>')}catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+async function prepareEsc(id){notice('escalationMsg','Preparing evidence package…');try{const{res,payload}=await callAuth('prepare-escalation',{issueId:id});if(!res.ok)throw new Error(payload.message||payload.error||'Not ready.');notice('escalationMsg',`Escalation draft ready${payload.target?.name?' for '+payload.target.name:''}. Nothing has been sent.`)}catch(e){notice('escalationMsg',e.message,true)}}
+async function loadRoutingContext(id,targetBox=null){const box=targetBox||$('routing_'+id);if(!box)return;box.innerHTML='<div class="notice">Loading routing question…</div>';try{const{res,payload}=await callAuth('routing-context',{issueId:id});if(!res.ok)throw new Error(payload.error||'Unable to load routing question.');renderRoutingQuestion(id,payload,box)}catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+function renderRoutingQuestion(id,payload,box){if(payload.routing?.terminal&&payload.routing?.reportingMethod==='emergency_911'){box.innerHTML='<div class="notice err"><b>Immediate danger</b><br>Call 911. Community Assist is not a substitute for emergency services.</div>';return}const q=payload.nextQuestion||(payload.questions||[]).find(x=>!(payload.answers||[]).some(a=>a.question_key===x.question_key));if(!q){box.innerHTML='<div class="notice"><b>Routing context complete.</b><br>Refreshing the case…</div>';loadMine();if(lastSuccessIssueId===id)refreshSuccessPrimaryAction(id);return}const opts=Array.isArray(q.options)?q.options:[];box.innerHTML=`<div class="route"><b>${esc(q.prompt||'One routing question')}</b><small>${esc(q.help_text||'This helps identify the correct agency and official reporting path.')}</small></div><div class="issue-actions">${opts.map(o=>`<button data-route-answer="${esc(o.key)}">${esc(o.label||o.key)}</button>`).join('')}</div>`;box.querySelectorAll('[data-route-answer]').forEach(b=>b.onclick=()=>answerRouting(id,q.question_key,b.dataset.routeAnswer,box))}
+async function answerRouting(id,questionKey,answerKey,box){box.innerHTML='<div class="notice">Saving routing context…</div>';try{const{res,payload}=await callAuth('routing-context',{issueId:id,questionKey,answerKey});if(!res.ok)throw new Error(payload.error||'Unable to save routing answer.');if(payload.routing?.conflict){box.innerHTML='<div class="notice"><b>Routing disagreement sent for review.</b><br>The canonical agency was not silently changed.</div>';await loadMine();return}if(payload.routing?.terminal&&payload.routing?.reportingMethod==='emergency_911'){box.innerHTML='<div class="notice err"><b>Immediate danger</b><br>Call 911. Community Assist is not a substitute for emergency services.</div>';await loadMine();return}if(payload.nextQuestion){renderRoutingQuestion(id,payload,box);return}box.innerHTML=`<div class="notice"><b>${payload.routing?.applied?'Responsible agency identified':'Routing review needed'}</b>${payload.routing?.agency?.short_name?`<br>${esc(payload.routing.agency.short_name)} · ${esc(payload.routing.reportingMethod||'')}`:''}</div>`;await loadMine();await loadResidentHome();if(lastSuccessIssueId===id)await refreshSuccessPrimaryAction(id)}catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+async function copyTextValue(text,successMessage='Copied to clipboard.'){
+  if(navigator.clipboard){await navigator.clipboard.writeText(String(text||''));notice('flowMsg',successMessage);return}
+  window.prompt('Copy this text:',String(text||''))
+}
+async function loadOfficialReportingPath(id,targetBox=null){
+  const box=targetBox||$('match_'+id)||$('routing_'+id);if(!box)return
+  box.innerHTML='<div class="notice">Loading official reporting path…</div>'
+  try{
+    const[pathResult,packetResult]=await Promise.all([
+      callAuth('official-reporting-path',{issueId:id}),
+      fetchAuth('official-report-packet',{issueId:id})
+    ])
+    const{res,payload}=pathResult
+    const packet=packetResult.res.ok?packetResult.payload:null
+    if(!res.ok)throw new Error(payload.message||payload.error||'Unable to load official reporting path.')
+    if(payload.needsRoutingContext){box.innerHTML='<div class="notice"><b>One routing question is needed first.</b></div>';loadRoutingContext(id,box);return}
+    if(payload.needsTriage){box.innerHTML='<div class="notice"><b>Routing review is pending.</b><br>Community Assist will not guess the responsible agency.</div>';return}
+    const rp=payload.reporting||{},ex=payload.serviceExpectations?.expectations||[],guidance=payload.processGuidance?.items||[]
+    let channel=''
+    if(rp.channelType==='phone')channel=`<div class="issue-actions"><a class="linkbtn" href="tel:311">Call 311</a>${rp.alternatePhone?`<a class="secondary-link" href="tel:${esc(rp.alternatePhone)}">Outside NYC: ${esc(rp.alternatePhone)}</a>`:''}</div>`
+    else if(rp.channelType==='emergency')channel='<div class="issue-actions"><a class="linkbtn" href="tel:911">Call 911</a></div>'
+    else if(rp.url)channel=`<div class="issue-actions"><a class="linkbtn" href="${esc(rp.url)}" target="_blank" rel="noopener">Open official reporting channel</a>${rp.statusUrl?`<a class="secondary-link" href="${esc(rp.statusUrl)}" target="_blank" rel="noopener">Check status</a>`:''}</div>`
+    const exp=ex.length?`<div class="trustbox"><b>What NYC publishes</b>${ex.map(x=>`<div class="guidance"><b>${esc(x.label)}</b><small>${esc(x.detail||'')}</small>${x.clockStarted?`<p class="tiny">Official clock started${x.dueAt?' · '+new Date(x.dueAt).toLocaleString():''}${x.windowPassed?' · published window passed':''}</p>`:'<p class="tiny">Official service clock has not started yet.</p>'}</div>`).join('')}</div>`:''
+    const proc=guidance.length?`<div class="trustbox"><b>Official process guidance</b>${guidance.map(g=>`<div class="guidance"><b>${esc(g.label||'Official process')}</b><small>${esc(g.detail||'')}</small></div>`).join('')}</div>`:''
+    const packetBlock=packet?.packet?`<div class="field-panel"><b>Ready-to-use report details</b><p class="tiny">Prepared from this Community Assist case. No resident identity, private notes, exact coordinates, or evidence metadata are included.</p><div class="guidance"><small>${esc(packet.packet.text||'')}</small></div><div class="issue-actions"><button data-copy-report="${id}">Copy report details</button>${rp.channelType==='phone'?`<button data-copy-script="${id}">Copy phone script</button>`:''}</div></div>`:''
+    const types=Array.isArray(rp.identifierTypes)?rp.identifierTypes:[]
+    const capture=types.length?`<div class="field-panel"><b>Bring the official reference back</b><p class="tiny">After you submit, record the service request or work order here so Community Assist can validate and track it.</p><div class="row stack"><select id="reftype_${id}">${types.map(t=>`<option value="${esc(t.key)}">${esc(t.label)}</option>`).join('')}</select><input id="ref_${id}" placeholder="Official reference number"><button class="primary" data-save-ref="${id}">Save & validate</button></div><div id="refmsg_${id}"></div></div>`:''
+    box.innerHTML=`<div class="route"><b>${esc(payload.agency?.full_name||payload.agency?.short_name||'Official reporting path')}</b><small>${esc(rp.guidance||'Use the official channel, then return with the reference number.')}</small></div>${packetBlock}${channel}${exp}${proc}${capture}`
+    box.querySelector('[data-copy-report]')?.addEventListener('click',()=>copyTextValue(packet.packet.text,`${packet.caseCode||'Case'} report details copied.`))
+    box.querySelector('[data-copy-script]')?.addEventListener('click',()=>copyTextValue(packet.packet.phoneScript,`${packet.caseCode||'Case'} phone script copied.`))
+    box.querySelector('[data-save-ref]')?.addEventListener('click',()=>saveOfficialReference(id))
+  }catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function saveOfficialReference(id){const input=$('ref_'+id),type=$('reftype_'+id),msg=$('refmsg_'+id);if(!input||!type||!msg)return;const ref=input.value.trim();if(!ref){msg.innerHTML='<div class="notice err">Enter the official reference number.</div>';return}msg.innerHTML='<div class="notice">Validating official reference…</div>';try{const{res,payload}=await callAuth('record-official-submission',{issueId:id,referenceId:ref,identifierType:type.value});if(!res.ok&&res.status!==202)throw new Error(payload.message||payload.error||'Unable to save official reference.');msg.innerHTML=`<div class="notice"><b>${esc((payload.status||'saved').replaceAll('_',' '))}</b><br>${esc(payload.message||'Official reference saved.')}</div>`;await loadMine();await loadNotifications();await loadResidentHome()}catch(e){msg.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+async function toggleIssueNotifications(id,currentEnabled){try{const{res,payload}=await callAuth('issue-notification-settings',{issueId:id,enabled:!currentEnabled});if(!res.ok)throw new Error(payload.error||'Unable to update notification settings.');await loadMine()}catch(e){notice('flowMsg',e.message,true)}}
+function showFieldUpdate(id){const box=$('field_'+id);if(!box)return;if(box.innerHTML.trim()){box.innerHTML='';return}box.innerHTML=`<div class="field-panel"><b>Add a structured field update</b><p class="tiny">This does not change the fixed/still-broken consensus.</p><select id="futype_${id}"><option value="crew_seen">Work crew seen</option><option value="temporary_repair">Temporary repair</option><option value="problem_worse">Problem got worse</option><option value="access_blocked">Access blocked</option><option value="condition_changed">Condition changed</option></select><textarea id="funote_${id}" placeholder="Optional private note"></textarea><label class="mini">📷 Optional photo<input id="fuphoto_${id}" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"></label><label class="tiny consent"><input id="fushare_${id}" type="checkbox"/> Allow photo to be public after review</label><div class="issue-actions"><button class="primary" data-submit-field="${id}">Save field update</button></div><div id="fumsg_${id}"></div></div>`;box.querySelector('[data-submit-field]')?.addEventListener('click',()=>submitFieldUpdate(id))}
+async function submitFieldUpdate(id){const msg=$('fumsg_'+id);if(!msg)return;msg.innerHTML='<div class="notice">Saving field update…</div>';try{const file=$('fuphoto_'+id)?.files?.[0];const photo=file?await upload(file,`field-update/${id}`):'';const{res,payload}=await callAuth('field-update',{issueId:id,updateType:$('futype_'+id).value,note:$('funote_'+id).value,photoPath:photo,allowPublicEvidence:Boolean($('fushare_'+id)?.checked)});if(!res.ok)throw new Error(payload.error||'Unable to save field update.');msg.innerHTML='<div class="notice"><b>Field update saved.</b><br>Your private note stays private. The structured civic update can appear in the public timeline.</div>';await loadTimeline(id);await loadNotifications();await loadResidentHome()}catch(e){msg.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+async function loadPublicDetail(id,targetId='publicdetail_'+id){const box=$(targetId);if(!box)return;if(box.innerHTML.trim()){box.innerHTML='';return}box.innerHTML='<div class="notice">Loading case details…</div>';try{const u=new URL(fn('issue-detail'));u.searchParams.set('issueId',id);const r=await fetch(u,{headers:{apikey:KEY}});const p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to load case detail.');const ex=p.serviceExpectations?.expectations||[],g=p.processGuidance?.items||[],ps=String(p.issue?.public_summary||'').trim();const canonicalId=p.canonicalIssueId||id;const concern=session?`<div class="issue-actions"><button data-flag-public="${esc(canonicalId)}">Report privacy/content concern</button></div><div id="publicflag_${esc(canonicalId)}"></div>`:'<p class="tiny">Sign in if you need to report a privacy or content concern about this case.</p>';box.innerHTML=`<div class="route"><b>${esc(p.caseCode||'Community Assist case')}</b><small>${p.supporterCount||0} supporters · ${(p.verification?.total)||0} verifiers</small>${ps?`<p>${esc(ps)}</p>`:''}</div>${ex.length?`<div class="trustbox"><b>Published service guidance</b>${ex.map(x=>`<div class="guidance"><b>${esc(x.label)}</b><small>${esc(x.detail||'')}</small></div>`).join('')}</div>`:''}${g.length?`<div class="trustbox"><b>Official process guidance</b>${g.map(x=>`<div class="guidance"><b>${esc(x.label)}</b><small>${esc(x.detail||'')}</small></div>`).join('')}</div>`:''}${concern}`;box.querySelector('[data-flag-public]')?.addEventListener('click',()=>showCaseFlagForm(canonicalId,'publicflag_'+canonicalId))}catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+function showCaseFlagForm(issueId,containerId){
+  if(!session){showAuth();return}
+  const box=$(containerId);if(!box)return
+  if(box.innerHTML.trim()){box.innerHTML='';return}
+  box.innerHTML=`<div class="review-item"><b>Report a problem with this public case</b><p class="tiny">Choose the concern that best fits. Your report goes to Community Assist moderation and does not automatically remove the case.</p><select id="flagreason_${esc(issueId)}"><option value="privacy">Privacy concern</option><option value="sensitive_location">Sensitive location exposed</option><option value="misleading">Misleading information</option><option value="spam">Spam</option><option value="abusive">Abusive content</option><option value="other">Other</option></select><textarea id="flagdetails_${esc(issueId)}" maxlength="1000" placeholder="Optional details for the moderator"></textarea><div class="issue-actions"><button class="primary" data-submit-case-flag="${esc(issueId)}">Send to moderation</button><button data-cancel-case-flag>Cancel</button></div><div id="flagmsg_${esc(issueId)}"></div></div>`
+  box.querySelector('[data-submit-case-flag]')?.addEventListener('click',()=>submitCaseFlag(issueId,containerId))
+  box.querySelector('[data-cancel-case-flag]')?.addEventListener('click',()=>{box.innerHTML=''})
+}
+async function submitCaseFlag(issueId,containerId){
+  const reason=$('flagreason_'+issueId)?.value||'other'
+  const details=String($('flagdetails_'+issueId)?.value||'').trim()
+  const msg=$('flagmsg_'+issueId);if(msg)msg.innerHTML='<div class="notice">Sending this concern to moderation…</div>'
+  try{
+    const{res,payload}=await callAuth('flag-content',{targetType:'issue',targetId:issueId,reason,details})
+    if(!res.ok)throw new Error(payload.error||'Unable to submit this concern.')
+    const box=$(containerId)
+    if(box)box.innerHTML=`<div class="success"><b>Concern sent to moderation.</b><br>${esc(payload.message||'Community Assist will review it. The case was not automatically hidden or deleted.')}</div>`
+    await loadOwnerOps()
+  }catch(e){if(msg)msg.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+
+async function check311(id){const box=$('match_'+id);if(!box)return;box.innerHTML='<div class="notice">Checking official records for likely matches…</div>';try{const{res,payload}=await callAuth('match-nyc311',{issueId:id});if(!res.ok)throw new Error(payload.error||'Unable to check official records.');const items=payload.candidates||[];if(!items.length){box.innerHTML=`<div class="notice"><b>No strong official match was found nearby.</b><br>Community Assist will keep the issue separate and move you to the official reporting path.</div><div class="issue-actions"><button class="primary" data-official-path="${id}">Report this officially</button></div>`;box.querySelector('[data-official-path]')?.addEventListener('click',()=>loadOfficialReportingPath(id));return}box.innerHTML=`<div class="notice"><b>Possible official match${items.length>1?'es':''}</b><br>Confirm only if this is the same physical problem.</div>`+items.slice(0,3).map(c=>`<div class="issue match-candidate"><div class="badges"><span class="badge blue">OFFICIAL RECORD</span><span class="badge">${esc(c.matchConfidence)} · ${c.matchScore}%</span></div><h3>${esc(c.problem)}</h3><p>${esc(c.detail||c.locationLabel||'Nearby service request')}</p><div class="stats"><span><b>${Math.round(c.distanceMeters||0)} m</b> away</span><span><b>${esc(c.agency||'Agency')}</b></span><span>${esc(c.status||'Unknown')}</span></div><div class="issue-actions"><button class="primary" data-link311="${esc(c.candidateId||'')}" data-issue311="${id}">Same issue · link it</button><button data-reject311="${esc(c.candidateId||'')}" data-issue311="${id}">Not the same</button></div></div>`).join('');box.querySelectorAll('[data-link311]').forEach(b=>b.onclick=()=>review311(b.dataset.issue311,b.dataset.link311,'linked'));box.querySelectorAll('[data-reject311]').forEach(b=>b.onclick=()=>review311(b.dataset.issue311,b.dataset.reject311,'rejected'))}catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+async function review311(issueId,candidateId,decision){if(!candidateId)return;const box=$('match_'+issueId);try{const{res,payload}=await callAuth('review-nyc311-match',{issueId,candidateId,decision});if(!res.ok)throw new Error(payload.error||'Unable to review this match.');if(decision==='linked'){box.innerHTML=`<div class="notice"><b>Linked to official request ${esc(payload.officialRequest?.externalRequestId||'')}.</b> Official status will now be tracked separately from community verification.</div>`;await loadArea();await loadMine()}else{box.innerHTML='<div class="notice">Marked as a different problem. Community Assist will keep these records separate.</div>'}}catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+async function refresh311(issueId){const box=$('match_'+issueId);if(box)box.innerHTML='<div class="notice">Refreshing the linked official request…</div>';try{const{res,payload}=await callAuth('refresh-nyc311-status',{issueId});if(!res.ok)throw new Error(payload.error||'Unable to refresh official status.');const requests=payload.requests||[];if(box)box.innerHTML=requests.length?requests.map(r=>`<div class="notice"><b>Official request ${esc(r.externalRequestId||'')}</b><br>Official status: ${esc(r.status||'Unknown')}${r.previousStatus&&r.previousStatus!==r.status?` · previously ${esc(r.previousStatus)}`:''}${r.resolution?`<br><small>${esc(r.resolution)}</small>`:''}</div>`).join(''):'<div class="notice">No linked official request was found to refresh.</div>';await loadArea();await loadMine();await loadNotifications()}catch(e){if(box)box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+function buildDigestHourOptions(){if(!$('digestHour'))return;if($('digestHour').options.length)return;for(let h=0;h<24;h++){const o=document.createElement('option');o.value=String(h);const d=new Date(2020,0,1,h,0,0);o.textContent=d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});$('digestHour').appendChild(o)}}
+async function resolveCivicDashboardFromLocation(){
+  if(!session){showAuth();return}
+  if(!areaIsUserChosen||!coords){notice('civicDashboardMsg','Choose a real location with GPS or NYC address search first.',true);return}
+  notice('civicDashboardMsg','Finding civic districts for this location…')
+  try{
+    const{res,payload}=await callAuth('civic-context-at-location',{lat:coords.lat,lng:coords.lng})
+    if(!res.ok)throw new Error(payload.error||'Unable to resolve civic districts.')
+    const cd=payload.communityDistrictCode,council=payload.councilDistrict
+    $('civicLocationOptions').innerHTML=`<div class="issue-actions">${cd?`<button data-civic-loc-type="community_board" data-civic-loc-code="${esc(cd)}">Community District ${esc(cd)}</button>`:''}${council?`<button data-civic-loc-type="council_district" data-civic-loc-code="${esc(council)}">Council District ${esc(council)}</button>`:''}</div>`
+    $('civicLocationOptions').querySelectorAll('[data-civic-loc-type]').forEach(b=>b.onclick=()=>{ $('civicScopeType').value=b.dataset.civicLocType;$('civicScopeCode').value=b.dataset.civicLocCode;loadCivicDashboard() })
+    notice('civicDashboardMsg','Choose a district above to open its Community Assist dashboard.')
+  }catch(e){notice('civicDashboardMsg',e.message,true)}
+}
+function civicMetric(label,value){return `<div class="metric"><b>${esc(value??0)}</b><small>${esc(label)}</small></div>`}
+async function loadCivicDashboard(){
+  const scopeType=$('civicScopeType')?.value||'community_board'
+  const code=String($('civicScopeCode')?.value||'').trim()
+  if(!/^\d{1,3}$/.test(code)){notice('civicDashboardMsg','Enter a valid district number.',true);return}
+  const n=Number(code)
+  if(scopeType==='council_district'&&(n<1||n>51)){notice('civicDashboardMsg','NYC Council districts are 1 through 51.',true);return}
+  if(scopeType==='community_board'&&(n<101||n>599)){notice('civicDashboardMsg','Use the NYC community district code, such as 404 for Queens Community Board 4.',true);return}
+  notice('civicDashboardMsg','Loading public accountability data…')
+  $('civicDashboardContent').innerHTML=''
+  try{
+    const u=new URL(fn('civic-dashboard'));u.searchParams.set('scopeType',scopeType);u.searchParams.set('scopeCode',String(n));u.searchParams.set('limit','20')
+    const r=await fetch(u,{headers:{apikey:KEY}}),p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to load civic dashboard.')
+    const scope=p.scope||{},m=p.metrics||{},items=p.priorityIssues||[],contact=scope.contact||null
+    const csv=new URL(fn('civic-briefing'));csv.searchParams.set('scopeType',scopeType);csv.searchParams.set('scopeCode',String(n));csv.searchParams.set('format','csv');csv.searchParams.set('limit','50')
+    $('civicDashboardContent').innerHTML=`<div class="owner-banner"><div><b>${esc(scope.displayName||`${scopeType} ${n}`)}</b><small>Community Assist public accountability snapshot</small></div></div><div class="metric-grid">${civicMetric('Total cases',m.totalIssues)}${civicMetric('Unresolved',m.unresolvedIssues)}${civicMetric('Awaiting verification',m.awaitingVerification)}${civicMetric('Still broken',m.stillBroken)}${civicMetric('Officially linked',m.officiallyLinked)}${civicMetric('Repeat failures',m.recurrenceIssues)}${civicMetric('Official closed, community unresolved',m.officialClosedStillUnresolved)}${civicMetric('Median unresolved age',`${Number(m.medianUnresolvedAgeDays||0)} d`)}</div>${contact?`<div class="trustbox"><b>District contact</b><p>${esc(contact.contactName||scope.displayName||'District office')}</p>${contact.email?`<small>${esc(contact.email)}</small><br>`:''}${contact.phone?`<small>${esc(contact.phone)}</small><br>`:''}${contact.address?`<small>${esc(contact.address)}</small>`:''}</div>`:''}<div class="issue-actions"><a class="secondary-link" href="${esc(csv.toString())}" target="_blank" rel="noopener">Download CSV briefing</a></div><h3>Priority cases</h3><div>${items.length?items.map(i=>`<article class="issue"><div class="badges">${i.caseCode?`<span class="case-code">${esc(i.caseCode)}</span>`:''}<span class="badge">${esc(i.categoryLabel||i.categoryKey||'Issue')}</span>${i.agency?`<span class="badge blue">${esc(i.agency)}</span>`:''}</div><h3>${esc(i.title||'Community issue')}</h3>${i.publicSummary?`<p>${esc(i.publicSummary)}</p>`:''}<p>${esc(i.locationLabel||'Public location withheld')}</p><div class="stats"><span><b>${Number(i.supporterCount||0)}</b> supporters</span><span><b>${Number(i.verifierCount||0)}</b> verifiers</span><span><b>${Number(i.ageDays||0)}</b> days</span></div>${i.caseCode?`<div class="issue-actions"><button data-civic-open="${esc(i.caseCode)}">Open case</button><button data-civic-share="${esc(i.caseCode)}">Share</button></div>`:''}</article>`).join(''):'<p class="empty">No public priority cases in this scope yet.</p>'}</div><p class="tiny">Priority is a Community Assist triage aid based on factors such as safety weight, age, support, verification state, recurrence, and official/community disagreement. It is not an official government severity score.</p>`
+    $('civicDashboardContent').querySelectorAll('[data-civic-open]').forEach(b=>b.onclick=()=>{setSharedCase(b.dataset.civicOpen,'view',true);loadSharedCase();$('sharedCaseCard').scrollIntoView({behavior:'smooth',block:'start'})})
+    $('civicDashboardContent').querySelectorAll('[data-civic-share]').forEach(b=>b.onclick=()=>shareCase('',b.dataset.civicShare,'view'))
+    notice('civicDashboardMsg','')
+  }catch(e){notice('civicDashboardMsg',e.message,true)}
+}
+
+async function loadPrivacyCenter(){
+  if(!session){showAuth();return}
+  $('privacyCard').hidden=false
+  try{const{res,payload}=await fetchAuth('privacy-request');if(!res.ok)throw new Error(payload.error||'Unable to load privacy settings.');const p=payload.pendingDeletion;if(p){$('pendingDeletionBox').innerHTML=`<div class="notice err"><b>Deletion request pending</b><br>You can cancel until ${esc(new Date(p.cancel_before).toLocaleString())}.<div class="issue-actions"><button data-cancel-delete="${esc(p.id)}">Cancel deletion request</button></div></div>`;$('requestDeleteAccount').disabled=true;$('pendingDeletionBox').querySelector('[data-cancel-delete]')?.addEventListener('click',()=>cancelDeleteRequest(p.id))}else{$('pendingDeletionBox').innerHTML='';$('requestDeleteAccount').disabled=false}notice('privacyMsg','')}catch(e){notice('privacyMsg',e.message,true)}
+}
+async function downloadMyData(){
+  try{const token=await getToken();const r=await fetch(fn('my-data-export'),{headers:{apikey:KEY,Authorization:`Bearer ${token}`}});const p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to export your data.');const blob=new Blob([JSON.stringify(p,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`community-assist-my-data-${new Date().toISOString().slice(0,10)}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('privacyMsg','Your data export was prepared on this device.')}catch(e){notice('privacyMsg',e.message,true)}
+}
+async function requestDeleteAccount(){
+  const confirmation=String($('deleteAccountConfirm')?.value||'').trim()
+  try{const{res,payload}=await callAuth('privacy-request',{action:'request_delete',confirmation});if(!res.ok)throw new Error(payload.error||'Unable to request account deletion.');$('deleteAccountConfirm').value='';notice('privacyMsg',payload.message||'Deletion request created.');await loadPrivacyCenter()}catch(e){notice('privacyMsg',e.message,true)}
+}
+async function cancelDeleteRequest(requestId){
+  try{const{res,payload}=await callAuth('privacy-request',{action:'cancel_delete',requestId});if(!res.ok)throw new Error(payload.error||'Unable to cancel deletion request.');notice('privacyMsg','Deletion request cancelled.');await loadPrivacyCenter()}catch(e){notice('privacyMsg',e.message,true)}
+}
+async function loadNotificationPreferences(){
+  if(!session){showAuth();return}
+  $('notificationPrefsCard').hidden=false;buildDigestHourOptions()
+  try{const{res,payload}=await fetchAuth('notification-preferences');if(!res.ok)throw new Error(payload.error||'Unable to load preferences.');const p=payload.preferences||{};$('digestFrequency').value=p.digest_frequency||'off';$('digestHour').value=String(p.digest_hour??8);$('digestTimezone').value=p.timezone||'America/New_York';$('prefOfficial').checked=p.include_official_updates!==false;$('prefVerification').checked=p.include_verification_updates!==false;$('prefWatches').checked=p.include_watch_alerts!==false;$('prefRecurrence').checked=p.include_recurrence_alerts!==false;notice('notificationPrefsMsg','')}catch(e){notice('notificationPrefsMsg',e.message,true)}
+}
+async function saveNotificationPreferences(){
+  try{const{res,payload}=await callAuth('notification-preferences',{digestFrequency:$('digestFrequency').value,digestHour:Number($('digestHour').value),timezone:String($('digestTimezone').value||'America/New_York').trim(),includeOfficialUpdates:$('prefOfficial').checked,includeVerificationUpdates:$('prefVerification').checked,includeWatchAlerts:$('prefWatches').checked,includeRecurrenceAlerts:$('prefRecurrence').checked});if(!res.ok)throw new Error(payload.error||'Unable to save preferences.');notice('notificationPrefsMsg',payload.message||'Preferences saved.')}catch(e){notice('notificationPrefsMsg',e.message,true)}
+}
+async function previewDigest(hours){
+  $('digestPreview').innerHTML='<div class="notice">Building your digest preview…</div>'
+  try{const{res,payload}=await fetchAuth('resident-digest?hours='+encodeURIComponent(hours));if(!res.ok)throw new Error(payload.error||'Unable to build digest preview.');const c=payload.counts||{};const sections=payload.sections||{};const rows=[...(sections.officialUpdates||[]),...(sections.verification||[]),...(sections.areaAlerts||[]),...(sections.scopeAlerts||[]),...(sections.recurrences||[]),...(sections.moderationAndRouting||[]),...(sections.other||[])].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).slice(0,20);$('digestPreview').innerHTML=`<div class="metric-grid"><div class="metric"><b>${c.totalUpdates||0}</b><small>updates</small></div><div class="metric"><b>${c.officialUpdates||0}</b><small>official</small></div><div class="metric"><b>${c.verificationUpdates||0}</b><small>verification</small></div><div class="metric"><b>${(c.newAreaAlerts||0)+(c.newScopeAlerts||0)}</b><small>watch alerts</small></div></div>${rows.length?'<div class="attention-list">'+rows.map(r=>`<div class="attention-item"><b>${esc(r.title||'Update')}</b><span>${esc(r.body||'')}</span><p class="tiny">${r.createdAt?new Date(r.createdAt).toLocaleString():''}</p></div>`).join('')+'</div>':'<p class="empty">No updates in this period.</p>'}` }catch(e){$('digestPreview').innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function loadNotifications(){if(!session){$('notificationsCard').hidden=true;return}$('notificationsCard').hidden=false;try{const token=await getToken();const r=await fetch(fn('my-notifications')+'?limit=50',{headers:{apikey:KEY,Authorization:`Bearer ${token}`}});const p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to load notifications.');const items=p.notifications||[];$('notificationsFeed').innerHTML=items.length?items.map(n=>`<article class="issue ${n.read_at?'':'unread'}"><div class="badges"><span class="badge">${esc((n.notification_type||'update').replaceAll('_',' '))}</span>${n.read_at?'':'<span class="badge">NEW</span>'}</div><h3>${esc(n.title)}</h3><p>${esc(n.body||'')}</p><small>${new Date(n.created_at).toLocaleString()}</small>${n.read_at?'':`<div class="issue-actions"><button data-read-notification="${n.id}">Mark read</button></div>`}</article>`).join(''):'<p class="empty">No notifications yet.</p>';document.querySelectorAll('[data-read-notification]').forEach(b=>b.onclick=()=>markNotificationRead(b.dataset.readNotification))}catch(e){$('notificationsFeed').innerHTML=`<p class="empty">${esc(e.message)}</p>`}}
+async function markNotificationRead(id){try{const{res,payload}=await callAuth('mark-notification-read',{notificationId:id});if(!res.ok)throw new Error(payload.error||'Unable to update notification.');await loadNotifications()}catch(e){notice('flowMsg',e.message,true)}}
+async function markAllNotificationsRead(){try{const{res,payload}=await callAuth('mark-notification-read',{markAll:true});if(!res.ok)throw new Error(payload.error||'Unable to update notifications.');await loadNotifications()}catch(e){notice('flowMsg',e.message,true)}}
+function categoryLabel(key){return (CATS.find(c=>c[0]===key)||[key,key])[1]}
+function renderWatchCategoryFilter(){const box=$('watchCategoryFilter');if(!box)return;box.innerHTML=CATS.filter(c=>c[0]!=='other').map(c=>`<label class="mini"><input type="checkbox" value="${esc(c[0])}" data-watch-category> ${esc(c[1])}</label>`).join('')}
+function selectedWatchCategories(){return [...document.querySelectorAll('[data-watch-category]:checked')].map(x=>x.value).slice(0,12)}
+function clearWatchCategories(){document.querySelectorAll('[data-watch-category]').forEach(x=>x.checked=false)}
+function updateWatchLocationStatus(){
+  if(!$('watchLocationStatus'))return
+  $('watchLocationStatus').textContent=areaIsUserChosen?'Location ready for a private area watch.':'Choose GPS or an NYC address result before saving a watch.'
+  if($('createAreaWatch'))$('createAreaWatch').disabled=!areaIsUserChosen
+}
+async function loadWatches(){
+  if(!session){if($('watchCenterCard'))$('watchCenterCard').hidden=true;return}
+  $('watchCenterCard').hidden=false
+  updateWatchLocationStatus()
+  try{
+    const [a,s]=await Promise.all([fetchAuth('area-watches'),fetchAuth('scope-watches')])
+    if(!a.res.ok)throw new Error(a.payload.error||'Unable to load area watches.')
+    if(!s.res.ok)throw new Error(s.payload.error||'Unable to load district and agency watches.')
+    const areas=a.payload.watches||[]
+    const scopes=s.payload.watches||[]
+    $('areaWatchList').innerHTML=areas.length?areas.map(w=>`<div class="issue"><div class="badges"><span class="badge">AREA</span></div><h3>${esc(w.label)}</h3><p>${Math.round(Number(w.radiusMeters||0))} m radius${w.categories?.length?' · '+w.categories.map(c=>esc(c.label)).join(', '):' · all categories'}</p><button data-delete-area-watch="${esc(w.id)}">Stop watching</button></div>`).join(''):'<p class="empty">No area watches yet.</p>'
+    $('scopeWatchList').innerHTML=scopes.length?scopes.map(w=>`<div class="issue"><div class="badges"><span class="badge">${esc(String(w.scope_type||'watch').replaceAll('_',' '))}</span></div><h3>${esc(w.label||w.scope_code)}</h3><p>${Array.isArray(w.category_keys)&&w.category_keys.length?esc(w.category_keys.map(categoryLabel).join(', ')):'All categories'}</p><button data-delete-scope-watch="${esc(w.id)}">Stop following</button></div>`).join(''):'<p class="empty">No district or agency watches yet.</p>'
+    document.querySelectorAll('[data-delete-area-watch]').forEach(b=>b.onclick=()=>deleteAreaWatch(b.dataset.deleteAreaWatch))
+    document.querySelectorAll('[data-delete-scope-watch]').forEach(b=>b.onclick=()=>deleteScopeWatch(b.dataset.deleteScopeWatch))
+  }catch(e){notice('watchMsg',e.message,true)}
+}
+async function createAreaWatch(){
+  if(!session){showAuth();return}
+  if(!areaIsUserChosen){notice('watchMsg','Choose your current location or an NYC address before saving an area watch.',true);return}
+  const label=String($('watchAreaLabel')?.value||'My area').trim()||'My area'
+  const radiusMeters=Number($('watchAreaRadius')?.value||1000)
+  try{const{res,payload}=await callAuth('area-watches',{label,lat:area.lat,lng:area.lng,radiusMeters,categoryKeys:selectedWatchCategories()});if(!res.ok)throw new Error(payload.error||'Unable to create area watch.');notice('watchMsg','Area watch saved. New matching issues will appear in your updates.');await loadWatches();await loadResidentHome()}catch(e){notice('watchMsg',e.message,true)}
+}
+async function deleteAreaWatch(id){
+  try{const token=await getToken();const r=await fetch(fn('area-watches')+'?id='+encodeURIComponent(id),{method:'DELETE',headers:{apikey:KEY,Authorization:`Bearer ${token}`}});const p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to delete area watch.');await loadWatches();await loadResidentHome()}catch(e){notice('watchMsg',e.message,true)}
+}
+async function resolveWatchCivic(){
+  if(!session){showAuth();return}
+  if(!areaIsUserChosen){notice('watchMsg','Choose your current location or an NYC address first.',true);return}
+  $('watchCivicOptions').innerHTML='<div class="notice">Finding NYC civic districts…</div>'
+  try{const{res,payload}=await callAuth('civic-context-at-location',{lat:area.lat,lng:area.lng});if(!res.ok)throw new Error(payload.error||'Unable to resolve civic districts.');watchCivic=payload;const cd=payload.communityDistrictCode,cc=payload.councilDistrict;$('watchCivicOptions').innerHTML=`<div class="issue-actions">${cd?`<button data-create-scope="community_board" data-scope-code="${esc(cd)}">Follow Community Board ${esc(cd)}</button>`:''}${cc?`<button data-create-scope="council_district" data-scope-code="${esc(cc)}">Follow Council District ${esc(cc)}</button>`:''}</div>`;document.querySelectorAll('[data-create-scope]').forEach(b=>b.onclick=()=>createScopeWatch(b.dataset.createScope,b.dataset.scopeCode))}catch(e){$('watchCivicOptions').innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function createScopeWatch(scopeType,scopeCode){
+  try{const{res,payload}=await callAuth('scope-watches',{scopeType,scopeCode:String(scopeCode),categoryKeys:selectedWatchCategories()});if(!res.ok)throw new Error(payload.error||'Unable to save watch.');notice('watchMsg',payload.message||'Watch saved.');await loadWatches();await loadResidentHome()}catch(e){notice('watchMsg',e.message,true)}
+}
+async function deleteScopeWatch(id){
+  try{const token=await getToken();const r=await fetch(fn('scope-watches'),{method:'DELETE',headers:{apikey:KEY,Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify({watchId:id})});const p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to delete watch.');await loadWatches();await loadResidentHome()}catch(e){notice('watchMsg',e.message,true)}
+}
+async function createAgencyWatch(){const code=$('watchAgencySelect')?.value;if(code)await createScopeWatch('agency',code)}
+async function loadResidentHome(){if(!session){$('residentHomeCard').hidden=true;return}$('residentHomeCard').hidden=false;try{const{res,payload}=await fetchAuth('resident-home');if(!res.ok)throw new Error(payload.error||'Unable to load your action summary.');const c=payload.counts||{};$('homeMetrics').innerHTML=`<div class="metric"><b>${c.trackedIssues||0}</b><small>tracked issues</small></div><div class="metric"><b>${c.unreadNotifications||0}</b><small>unread updates</small></div><div class="metric"><b>${c.needsVerification||0}</b><small>need verification</small></div><div class="metric"><b>${c.waitingForSecondVerifier||0}</b><small>waiting for another resident</small></div><div class="metric"><b>${c.publishedServiceWindowsPassed||0}</b><small>service windows passed</small></div><div class="metric"><b>${c.activeAreaWatches||0}</b><small>area watches</small></div>`;const items=payload.attention||[];$('homeAttention').innerHTML=items.length?items.map(a=>`<div class="attention-item"><b>${esc(a.label||a.title||'Needs attention')}</b><span>${esc(a.title||'')}</span>${a.detail?`<p class="tiny">${esc(a.detail)}</p>`:''}</div>`).join(''):'<p class="empty">Nothing urgent needs your attention right now.</p>'}catch(e){$('homeAttention').innerHTML=`<p class="empty">${esc(e.message)}</p>`}}
+function reviewAgencyName(id){const a=(moderationRefs?.agencies||[]).find(x=>x.id===id);return a?.short_name||a?.full_name||'Agency'}
+function reviewJurisdictionOptions(selected=''){return (moderationRefs?.jurisdictions||[]).map(j=>`<option value="${esc(j.id)}" ${j.id===selected?'selected':''}>${esc(j.name)}${j.jurisdiction_type?' · '+esc(j.jurisdiction_type):''}</option>`).join('')}
+function reviewAgencyOptions(selected=''){return (moderationRefs?.agencies||[]).map(a=>`<option value="${esc(a.id)}" data-jurisdiction="${esc(a.jurisdiction_id||'')}" ${a.id===selected?'selected':''}>${esc(a.short_name||a.full_name)} · ${esc(a.full_name||'')}</option>`).join('')}
+function setReviewTab(tab){reviewTab=tab;document.querySelectorAll('[data-review-tab]').forEach(b=>b.classList.toggle('active',b.dataset.reviewTab===tab));renderReviewQueue()}
+async function loadReviewCenter(scroll=false){
+  if(!session)return
+  $('ownerReviewCard').hidden=false
+  $('reviewQueueContent').innerHTML='<div class="review-empty">Loading review queues…</div>'
+  notice('reviewCenterMsg','')
+  try{
+    const [refs,t,c,d,f,e,l]=await Promise.all([
+      fetchAuth('moderation-reference-data'),fetchAuth('routing-triage-queue',{limit:50}),fetchAuth('routing-review-queue',{limit:50}),fetchAuth('duplicate-review-queue',{limit:50}),fetchAuth('content-flag-queue',{limit:50}),fetchAuth('evidence-review-queue',{limit:50}),fetchAuth('moderation-location-locks')
+    ])
+    for(const x of [refs,t,c,d,f,e,l])if(!x.res.ok)throw new Error(x.payload.error||'Unable to load one of the review queues.')
+    moderationRefs=refs.payload
+    reviewQueues={triage:t.payload.items||[],conflicts:c.payload.items||[],duplicates:d.payload.items||[],content:f.payload.items||[],evidence:e.payload.items||[],locationLocks:l.payload.items||[]}
+    const counts=Object.fromEntries(Object.entries(reviewQueues).map(([k,v])=>[k,v.length]))
+    $('reviewQueueMetrics').innerHTML=`<div class="metric"><b>${counts.triage}</b><small>routing triage</small></div><div class="metric"><b>${counts.conflicts}</b><small>routing conflicts</small></div><div class="metric"><b>${counts.duplicates}</b><small>duplicates</small></div><div class="metric"><b>${counts.content}</b><small>content flags</small></div><div class="metric"><b>${counts.locationLocks}</b><small>location locks</small></div><div class="metric"><b>${counts.evidence}</b><small>evidence items</small></div>`
+    renderReviewQueue()
+    if(scroll)$('ownerReviewCard').scrollIntoView({behavior:'smooth',block:'start'})
+  }catch(e){$('reviewQueueContent').innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+function renderReviewQueue(){
+  if(!reviewQueues)return
+  const items=reviewQueues[reviewTab]||[]
+  const locationLocks=reviewTab==='content'?(reviewQueues.locationLocks||[]):[]
+  if(!items.length&&!locationLocks.length){$('reviewQueueContent').innerHTML='<div class="review-empty">Nothing is waiting in this queue.</div>';return}
+  if(reviewTab==='triage'){
+    $('reviewQueueContent').innerHTML=items.map(x=>{const i=x.issue||{};const assigned=i.responsible_agency_id||'';return `<div class="review-item" data-review-id="${esc(x.caseId)}"><div class="badges"><span class="badge">ROUTING TRIAGE</span></div><h3>${esc(i.title||'Issue')}</h3><div class="review-meta"><span>${esc(i.category_key||'')}</span><span>${esc(i.location_label||'')}</span><span>${x.hasOfficialRequest?'Official request linked':'No official request'}</span></div><p>${esc(x.reason||'Needs human routing review.')}</p><label class="tiny"><b>Agency</b></label><select data-triage-agency>${reviewAgencyOptions(assigned)}</select><label class="tiny"><b>Jurisdiction</b></label><select data-triage-jurisdiction>${reviewJurisdictionOptions()}</select><textarea data-triage-note placeholder="Private review note, optional"></textarea><div class="review-actions"><button class="primary" data-triage-assign="${esc(x.caseId)}">Assign route</button><button data-triage-dismiss="${esc(x.caseId)}">Dismiss triage</button></div></div>`}).join('')
+    document.querySelectorAll('[data-triage-agency]').forEach(sel=>{const sync=()=>{const o=sel.selectedOptions[0],jid=o?.dataset?.jurisdiction||'';const card=sel.closest('.review-item'),j=card?.querySelector('[data-triage-jurisdiction]');if(jid&&j)j.value=jid};sel.onchange=sync;sync()})
+    document.querySelectorAll('[data-triage-assign]').forEach(b=>b.onclick=()=>resolveTriage(b.dataset.triageAssign,'assign',b.closest('.review-item')))
+    document.querySelectorAll('[data-triage-dismiss]').forEach(b=>b.onclick=()=>resolveTriage(b.dataset.triageDismiss,'dismiss',b.closest('.review-item')))
+  }else if(reviewTab==='conflicts'){
+    $('reviewQueueContent').innerHTML=items.map(x=>`<div class="review-item"><div class="badges"><span class="badge">ROUTING CONFLICT</span><span class="risk ${x.reviewRisk==='high'?'high':''}">${esc(x.reviewRisk||'normal')} risk</span></div><h3>${esc(x.issue?.title||'Issue')}</h3><div class="review-meta"><span>${esc(x.issue?.locationLabel||'')}</span><span>Current: ${esc(x.currentAgency?.short_name||'unassigned')}</span><span>Proposed: ${esc(x.proposedAgency?.short_name||'unassigned')}</span></div><p>${esc(x.reason||'A resident supplied routing information that conflicts with the canonical agency.')}</p>${x.officialLink?.present?`<div class="notice"><b>Official government request already linked.</b> Accepting this change requires owner confirmation.</div>`:''}<textarea data-conflict-note="${esc(x.flagId)}" placeholder="Private review note"></textarea><div class="review-actions"><button class="primary" data-conflict-accept="${esc(x.flagId)}" data-high="${x.officialLink?.present?'1':'0'}">Accept proposed route</button><button data-conflict-reject="${esc(x.flagId)}">Keep current route</button></div></div>`).join('')
+    document.querySelectorAll('[data-conflict-accept]').forEach(b=>b.onclick=()=>resolveConflict(b.dataset.conflictAccept,'accepted',b.dataset.high==='1'))
+    document.querySelectorAll('[data-conflict-reject]').forEach(b=>b.onclick=()=>resolveConflict(b.dataset.conflictReject,'rejected',false))
+  }else if(reviewTab==='duplicates'){
+    $('reviewQueueContent').innerHTML=items.map(x=>`<div class="review-item"><div class="badges"><span class="badge">DUPLICATE PROPOSAL</span><span class="risk ${x.reviewRisk==='high'?'high':''}">${esc(x.reviewRisk||'normal')} risk</span></div><div class="grid"><div><b>${esc(x.issueA?.title||'Case A')}</b><p class="tiny">${esc(x.issueA?.locationLabel||'')} · ${x.issueA?.supporterCount||0} supporters · ${x.issueA?.verifierCount||0} verifiers</p></div><div><b>${esc(x.issueB?.title||'Case B')}</b><p class="tiny">${esc(x.issueB?.locationLabel||'')} · ${x.issueB?.supporterCount||0} supporters · ${x.issueB?.verifierCount||0} verifiers</p></div></div><p>${esc(x.reason||'A resident proposed that these represent the same physical problem.')}${x.distanceMeters!=null?' · '+Math.round(x.distanceMeters)+' m':''}</p>${x.ownerReviewRequired?'<div class="notice"><b>Both cases have official government records.</b> Owner confirmation is required to consolidate.</div>':''}<textarea data-dup-note="${esc(x.flagId)}" placeholder="Private review note"></textarea><div class="review-actions"><button class="primary" data-dup-accept="${esc(x.flagId)}" data-high="${x.ownerReviewRequired?'1':'0'}">Consolidate cases</button><button data-dup-reject="${esc(x.flagId)}">Keep separate</button></div></div>`).join('')
+    document.querySelectorAll('[data-dup-accept]').forEach(b=>b.onclick=()=>resolveDuplicate(b.dataset.dupAccept,'accepted',b.dataset.high==='1'))
+    document.querySelectorAll('[data-dup-reject]').forEach(b=>b.onclick=()=>resolveDuplicate(b.dataset.dupReject,'rejected',false))
+  }else if(reviewTab==='content'){
+    const flagHtml=items.map(x=>{const t=x.target||{},isIssue=x.target?.type==='issue';return `<div class="review-item"><div class="badges"><span class="badge">CONTENT / PRIVACY</span><span class="risk">${esc(x.reason||'flag')}</span></div><h3>${esc(x.issue?.title||t.title||'Flagged content')}</h3><p>${esc(x.details||'No additional details were provided.')}</p><div class="review-meta"><span>Target: ${esc(t.type||'')}</span><span>${esc(t.locationLabel||'')}</span></div>${t.previewUrl?`<img class="review-preview" src="${esc(t.previewUrl)}" alt="Moderator evidence preview">`:''}${t.description?`<div class="trustbox"><b>Private observation text</b><span>${esc(t.description)}</span></div>`:''}${t.note?`<div class="trustbox"><b>Private verification note</b><span>${esc(t.note)}</span></div>`:''}<textarea data-content-note="${esc(x.flagId)}" placeholder="Private moderator note"></textarea><div class="review-actions"><button data-content-action="dismiss" data-flag="${esc(x.flagId)}">Dismiss flag</button>${isIssue?`<button class="warn-action" data-content-action="hide_location" data-flag="${esc(x.flagId)}">Hide public location</button><button class="danger-action" data-content-action="hide_issue" data-flag="${esc(x.flagId)}">Hide public issue</button>`:`<button class="danger-action" data-content-action="hide_evidence" data-flag="${esc(x.flagId)}">Hide public evidence</button>`}</div></div>`}).join('')
+    const lockHtml=locationLocks.length?`<div class="route"><b>Moderation-hidden locations</b><small>Clearing a lock does not reveal the location. It only lets the original reporter choose a new public precision later.</small></div>`+locationLocks.map(x=>`<div class="review-item"><div class="badges"><span class="badge">LOCATION LOCK</span>${x.public_code?`<span class="case-code">${esc(x.public_code)}</span>`:''}</div><h3>${esc(x.title||'Community issue')}</h3><p>${esc(x.location_label||'Private location label')}</p><textarea data-lock-note="${esc(x.id)}" placeholder="Required private note explaining why this lock can be cleared"></textarea><div class="review-actions"><button class="warn-action" data-unlock-location="${esc(x.id)}">Clear moderation lock</button></div></div>`).join(''):''
+    $('reviewQueueContent').innerHTML=flagHtml+lockHtml
+    document.querySelectorAll('[data-content-action]').forEach(b=>b.onclick=()=>resolveContentFlag(b.dataset.flag,b.dataset.contentAction))
+    document.querySelectorAll('[data-unlock-location]').forEach(b=>b.onclick=()=>unlockModeratedLocation(b.dataset.unlockLocation))
+  }else if(reviewTab==='evidence'){
+    $('reviewQueueContent').innerHTML=items.map(x=>`<div class="review-item"><div class="badges"><span class="badge">EVIDENCE</span><span class="badge">${esc((x.stage||'').replaceAll('_',' '))}</span></div><h3>${esc(x.issue?.title||'Evidence')}</h3><div class="review-meta"><span>${esc(x.evidenceType)}</span><span>${esc(x.issue?.location_label||'')}</span>${x.verificationStatus?`<span>${esc(x.verificationStatus.replaceAll('_',' '))}</span>`:''}</div>${x.previewUrl?`<img class="review-preview" src="${esc(x.previewUrl)}" alt="Moderator evidence preview">`:''}${x.previewIsOriginal?'<p class="tiny">Moderator preview uses the private original. The public never receives this object.</p>':'<p class="tiny">Preview is the metadata-stripped public-safe derivative.</p>'}${x.needsContentReview?`<textarea data-evidence-note="${esc(x.evidenceId)}" placeholder="Private moderator note"></textarea><label class="tiny" style="display:flex;gap:8px;align-items:flex-start;margin-top:8px"><input type="checkbox" data-evidence-privacy="${esc(x.evidenceId)}" style="width:auto;margin-top:2px"><span><b>Visual privacy checked.</b> No visible face, readable license plate, exact residential identifier, ID, document, or other sensitive personal detail requires redaction.</span></label><div class="review-actions"><button class="primary" data-evidence-review="approved" data-type="${esc(x.evidenceType)}" data-id="${esc(x.evidenceId)}">Approve content</button><button data-evidence-review="rejected" data-type="${esc(x.evidenceType)}" data-id="${esc(x.evidenceId)}">Keep private</button></div>`:x.needsSanitization?`<div class="review-actions"><button class="primary" data-evidence-sanitize data-type="${esc(x.evidenceType)}" data-id="${esc(x.evidenceId)}">Create public-safe copy</button></div>`:'<div class="notice">Approved and sanitized. Controlled public display is ready.</div>'}</div>`).join('')
+    document.querySelectorAll('[data-evidence-review]').forEach(b=>b.onclick=()=>reviewEvidence(b.dataset.type,b.dataset.id,b.dataset.evidenceReview))
+    document.querySelectorAll('[data-evidence-sanitize]').forEach(b=>b.onclick=()=>sanitizeEvidence(b.dataset.type,b.dataset.id))
+  }
+}
+async function resolveTriage(caseId,action,card){
+  const note=String(card?.querySelector('[data-triage-note]')?.value||'').trim()
+  const body={caseId,action,note}
+  if(action==='assign'){body.agencyId=card?.querySelector('[data-triage-agency]')?.value||'';body.jurisdictionId=card?.querySelector('[data-triage-jurisdiction]')?.value||''}
+  try{const{res,payload}=await callAuth('resolve-routing-triage',body);if(!res.ok)throw new Error(payload.error||'Unable to resolve routing triage.');notice('reviewCenterMsg',action==='assign'?'Routing assignment saved.':'Triage case dismissed.');await Promise.all([loadReviewCenter(),loadOwnerOps()])}catch(e){notice('reviewCenterMsg',e.message,true)}
+}
+async function resolveConflict(flagId,decision,high){
+  const note=String(document.querySelector(`[data-conflict-note="${flagId}"]`)?.value||'').trim()
+  let confirmOfficialOverride=false
+  if(decision==='accepted'&&high){if(!moderationRefs?.reviewer?.owner){notice('reviewCenterMsg','Only an owner can change routing after an official request is linked.',true);return}confirmOfficialOverride=confirm('An official government request is already linked. Confirm that you intend to change the canonical agency.');if(!confirmOfficialOverride)return}
+  try{const{res,payload}=await callAuth('review-routing-conflict',{flagId,decision,note,confirmOfficialOverride});if(!res.ok)throw new Error(payload.error||'Unable to review routing conflict.');notice('reviewCenterMsg',decision==='accepted'?'Canonical routing updated.':'Current routing kept.');await Promise.all([loadReviewCenter(),loadOwnerOps()])}catch(e){notice('reviewCenterMsg',e.message,true)}
+}
+async function resolveDuplicate(flagId,decision,high){
+  const note=String(document.querySelector(`[data-dup-note="${flagId}"]`)?.value||'').trim()
+  let confirmGovernmentMerge=false
+  if(decision==='accepted'&&high){if(!moderationRefs?.reviewer?.owner){notice('reviewCenterMsg','Only an owner can consolidate two cases that both have official government records.',true);return}confirmGovernmentMerge=confirm('Both cases have official government records. Confirm that they are the same physical issue and should be consolidated.');if(!confirmGovernmentMerge)return}
+  try{const{res,payload}=await callAuth('review-duplicate',{flagId,decision,note,confirmGovernmentMerge});if(!res.ok)throw new Error(payload.error||'Unable to review duplicate proposal.');notice('reviewCenterMsg',decision==='accepted'?'Cases consolidated safely.':'Cases kept separate.');await Promise.all([loadReviewCenter(),loadOwnerOps()])}catch(e){notice('reviewCenterMsg',e.message,true)}
+}
+async function resolveContentFlag(flagId,action){
+  const note=String(document.querySelector(`[data-content-note="${flagId}"]`)?.value||'').trim()
+  if(action!=='dismiss'&&!confirm('This protective action changes what the public can see. Continue?'))return
+  try{const{res,payload}=await callAuth('review-content-flag',{flagId,action,note});if(!res.ok)throw new Error(payload.error||'Unable to resolve content report.');notice('reviewCenterMsg','Content review action saved.');await Promise.all([loadReviewCenter(),loadOwnerOps(),loadArea()])}catch(e){notice('reviewCenterMsg',e.message,true)}
+}
+async function unlockModeratedLocation(issueId){
+  const note=String(document.querySelector(`[data-lock-note="${issueId}"]`)?.value||'').trim()
+  if(note.length<10){notice('reviewCenterMsg','Add a short private note before clearing the moderation location lock.',true);return}
+  if(!confirm('Clear the moderation lock? The location will remain hidden until the original reporter chooses a new public precision.'))return
+  try{const{res,payload}=await callAuth('moderation-location-locks',{issueId,action:'unlock',note});if(!res.ok)throw new Error(payload.error||'Unable to clear the location lock.');notice('reviewCenterMsg',payload.message||'Moderation location lock cleared.');await Promise.all([loadReviewCenter(),loadOwnerOps()])}catch(e){notice('reviewCenterMsg',e.message,true)}
+}
+async function reviewEvidence(type,id,decision){
+  const note=String(document.querySelector(`[data-evidence-note="${id}"]`)?.value||'').trim()
+  const visualPrivacyConfirmed=document.querySelector(`[data-evidence-privacy="${id}"]`)?.checked===true
+  if(decision==='approved'&&!visualPrivacyConfirmed){notice('reviewCenterMsg','Confirm the visual privacy check before approving this image for public display.',true);return}
+  try{const{res,payload}=await callAuth('review-evidence',{evidenceType:type,evidenceId:id,decision,note,visualPrivacyConfirmed});if(!res.ok)throw new Error(payload.error||'Unable to review evidence.');notice('reviewCenterMsg',decision==='approved'?(payload.needsSanitization?'Privacy review passed. Create the metadata-stripped public-safe copy next.':'Evidence approved.'):'Evidence will remain private.');await Promise.all([loadReviewCenter(),loadOwnerOps()])}catch(e){notice('reviewCenterMsg',e.message,true)}
+}
+async function sanitizeEvidence(type,id){
+  try{notice('reviewCenterMsg','Creating metadata-stripped public-safe copy…');const{res,payload}=await callAuth('sanitize-public-evidence',{evidenceType:type,evidenceId:id});if(!res.ok)throw new Error(payload.error||'Unable to create public-safe evidence.');notice('reviewCenterMsg','Public-safe evidence copy created. The original remains private.');await Promise.all([loadReviewCenter(),loadOwnerOps()])}catch(e){notice('reviewCenterMsg',e.message,true)}
+}
+async function loadOwnerOps(){
+  if(!session){if($('ownerOpsCard'))$('ownerOpsCard').hidden=true;return}
+  try{
+    const [h,m]=await Promise.all([fetchAuth('system-health'),fetchAuth('moderation-summary')])
+    if(h.res.status===403||m.res.status===403){$('ownerOpsCard').hidden=true;return}
+    if(!h.res.ok)throw new Error(h.payload.error||'Unable to load system health.')
+    if(!m.res.ok)throw new Error(m.payload.error||'Unable to load moderation summary.')
+    $('ownerOpsCard').hidden=false
+    const overall=String(h.payload.overall||'unknown')
+    const integrity=String(h.payload.integrity?.overall||'unknown')
+    const auditHealthy=m.payload.audit?.healthy!==false
+    $('ownerHealthBanner').innerHTML=`<div><b>System: ${esc(overall)}</b><small>Integrity ${esc(integrity)} · moderation audit ${auditHealthy?'healthy':'attention'}</small></div><span class="badge">${esc(overall.toUpperCase())}</span>`
+    const c=m.payload.counts||{}
+    $('ownerOpsMetrics').innerHTML=`<div class="metric"><b>${c.contentFlags||0}</b><small>content flags</small></div><div class="metric"><b>${c.evidenceReview||0}</b><small>evidence review</small></div><div class="metric"><b>${c.routingTriage||0}</b><small>routing triage</small></div><div class="metric"><b>${c.routingConflicts||0}</b><small>routing conflicts</small></div><div class="metric"><b>${c.duplicateProposals||0}</b><small>duplicate proposals</small></div><div class="metric"><b>${c.officialReferenceMismatches||0}</b><small>reference mismatches</small></div><div class="metric"><b>${c.stalePendingOfficialReferences||0}</b><small>stale references</small></div><div class="metric"><b>${c.escalationDrafts||0}</b><small>escalation drafts</small></div>`
+    const items=[]
+    if(overall!=='healthy')items.push({title:'System health needs attention',detail:`Overall status: ${overall}. Integrity: ${integrity}.`})
+    if(!auditHealthy)items.push({title:'Moderation audit needs attention',detail:`Missing audit entries: ${m.payload.audit?.missingAuditEntries||0}.`})
+    for(const [label,n] of [['Content flags',c.contentFlags],['Evidence review',c.evidenceReview],['Routing triage',c.routingTriage],['Routing conflicts',c.routingConflicts],['Duplicate proposals',c.duplicateProposals],['Official reference mismatches',c.officialReferenceMismatches],['Stale pending references',c.stalePendingOfficialReferences],['Escalation drafts',c.escalationDrafts]])if(Number(n)>0)items.push({title:label,detail:`${n} item${Number(n)===1?'':'s'} waiting.`})
+    $('ownerOpsAttention').innerHTML=items.length?items.map(x=>`<div class="attention-item"><b>${esc(x.title)}</b><span>${esc(x.detail)}</span></div>`).join(''):'<p class="empty">No moderation or operational backlog needs attention.</p>'
+  }catch(e){$('ownerOpsCard').hidden=false;$('ownerHealthBanner').innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function savePilotResult(){
+  const scenarioKey=$('pilotScenarioSelect')?.value
+  const result=$('pilotResultSelect')?.value
+  const caseCode=String($('pilotCaseCodeInput')?.value||'').trim().toUpperCase()
+  const note=String($('pilotTestNote')?.value||'').trim()
+  if(!scenarioKey){notice('pilotResultMsg','Choose a pilot scenario first.',true);return}
+  try{const{res,payload}=await callAuth('pilot-readiness',{scenarioKey,result,caseCode,note});if(!res.ok)throw new Error(payload.error||'Unable to record the pilot test.');notice('pilotResultMsg','Pilot test result saved.');$('pilotTestNote').value='';$('pilotCaseCodeInput').value='';await loadOwnerPilot()}catch(e){notice('pilotResultMsg',e.message,true)}
+}
+async function loadOwnerPilot(){
+  if(!session){if($('ownerPilotCard'))$('ownerPilotCard').hidden=true;return}
+  try{
+    const{res,payload}=await fetchAuth('pilot-readiness')
+    if(res.status===403){$('ownerPilotCard').hidden=true;return}
+    if(!res.ok)throw new Error(payload.error||'Unable to load pilot readiness.')
+    $('ownerPilotCard').hidden=false
+    const total=Number(payload.total||payload.summary?.total||24),passed=Number(payload.passed||payload.summary?.passed||0),blocked=Number(payload.blocked||payload.summary?.blocked||0),failed=Number(payload.failed||payload.summary?.failed||0),criticalPassed=Number(payload.criticalPassed||payload.summary?.criticalPassed||0),criticalTotal=Number(payload.criticalTotal||payload.summary?.criticalTotal||0)
+    $('pilotMetrics').innerHTML=`<div class="metric"><b>${passed}/${total}</b><small>scenarios passed</small></div><div class="metric"><b>${criticalPassed}/${criticalTotal}</b><small>critical passed</small></div><div class="metric"><b>${blocked}</b><small>blocked</small></div><div class="metric"><b>${failed}</b><small>failed</small></div>`
+    const next=payload.recommendedNext
+    $('pilotNext').innerHTML=next?`<div class="owner-banner"><div><b>Next recommended test</b><small>${esc(next.label||next.scenario_key||'Pilot scenario')}${next.criticality?' · '+esc(next.criticality):''}</small></div><span class="badge">${esc((next.result||'untested').replaceAll('_',' '))}</span></div>`:'<div class="owner-banner"><b>No remaining test recommendation.</b></div>'
+    const remaining=payload.remainingCritical||[]
+    pilotScenarios=Array.isArray(payload.scenarios)?payload.scenarios:[]
+    if($('pilotScenarioSelect')){
+      const previous=$('pilotScenarioSelect').value
+      const sorted=[...pilotScenarios].sort((a,b)=>({critical:0,high:1,medium:2}[a.criticality]??3)-({critical:0,high:1,medium:2}[b.criticality]??3)||String(a.label).localeCompare(String(b.label)))
+      $('pilotScenarioSelect').innerHTML=sorted.map(x=>`<option value="${esc(x.scenario_key)}">${esc(x.label)} · ${esc(x.criticality||'')}</option>`).join('')
+      if(previous&&sorted.some(x=>x.scenario_key===previous))$('pilotScenarioSelect').value=previous
+      else if(payload.recommendedNext?.scenario_key)$('pilotScenarioSelect').value=payload.recommendedNext.scenario_key
+    }
+    $('pilotRemaining').innerHTML=remaining.length?remaining.slice(0,8).map(x=>`<div class="readiness-row"><div><b>${esc(x.label||x.scenario_key||'Critical test')}</b><small>${esc(x.area||'critical workflow')}</small></div><span class="badge">${esc((x.result||'untested').replaceAll('_',' '))}</span></div>`).join(''):'<p class="empty">No critical tests remaining.</p>'
+  }catch(e){if($('ownerPilotCard')){$('ownerPilotCard').hidden=false;$('pilotNext').innerHTML=`<div class="notice err">${esc(e.message)}</div>`}}
+}
+async function loadMethodology(){try{const r=await fetch(fn('methodology'),{headers:{apikey:KEY}}),p=await r.json();if(!r.ok)throw new Error(p.error||'Unable to load methodology.');const v=p.verification||{},d=p.duplicateDetection||{},se=p.serviceExpectations||{},pg=p.officialProcessGuidance||{};$('methodologySummary').innerHTML=`<div class="trust-grid"><div><b>Verification</b><p class="tiny">At least ${v.minimumIndependentResidents||2} independent residents and ${Math.round((v.consensusShare||.6)*100)}% consensus.</p></div><div><b>Duplicates</b><p class="tiny">Same category, ${d.radiusMeters||175} m, ${d.lookbackDays||120} days. Human review before consolidation.</p></div><div><b>Official evidence</b><p class="tiny">Government status stays separate from resident verification. Proximity alone never confirms a match.</p></div><div><b>Service windows</b><p class="tiny">Source-backed guidance only. Official clock starts from the dated official submission, not the Community Assist report.</p></div><div><b>Process guidance</b><p class="tiny">Responsibility and process milestones stay separate from countdowns. Guidance is re-verified every ${pg.sourceReverificationDays||se.sourceReverificationDays||90} days.</p></div><div><b>Privacy</b><p class="tiny">Resident identity and private exact locations are excluded from public issue data. Original evidence files are never served publicly.</p></div></div><p class="tiny">Methodology ${esc(p.methodologyVersion||'')} · updated ${p.updatedAt?new Date(p.updatedAt).toLocaleString():'recently'}</p>`}catch(e){$('methodologySummary').innerHTML=`<p class="empty">${esc(e.message)}</p>`}}
+function setSharedCase(code,action='view',push=true){
+  const clean=String(code||'').trim().toUpperCase()
+  if(!/^CA-[A-F0-9]{10}$/.test(clean))throw new Error('Enter a valid Community Assist case code, for example CA-8CB4A4DFD5.')
+  sharedCaseCode=clean
+  sharedCaseAction=action==='verify'?'verify':'view'
+  validSharedCase=true
+  if(push&&(location.protocol==='http:'||location.protocol==='https:')){
+    const u=new URL(location.href)
+    u.searchParams.set('case',sharedCaseCode)
+    u.searchParams.set('action',sharedCaseAction)
+    history.pushState({caseCode:sharedCaseCode,action:sharedCaseAction},'',u)
+  }
+}
+async function openCaseLookup(){
+  const code=$('caseLookupInput').value
+  try{
+    setSharedCase(code,'view',true)
+    $('caseLookupCard').hidden=true
+    await loadSharedCase()
+    $('sharedCaseCard').scrollIntoView({behavior:'smooth',block:'start'})
+  }catch(e){notice('caseLookupMsg',e.message,true)}
+}
+function syncSharedCaseFromUrl(){
+  const q=new URLSearchParams(location.search)
+  sharedCaseCode=String(q.get('case')||'').trim().toUpperCase()
+  sharedCaseAction=String(q.get('action')||'view').trim().toLowerCase()
+  validSharedCase=/^CA-[A-F0-9]{10}$/.test(sharedCaseCode)
+  loadSharedCase()
+}
+async function loadSharedCase(){
+  const card=$('sharedCaseCard')
+  if(!card)return
+  if(!validSharedCase){card.hidden=true;return}
+  card.hidden=false
+  $('sharedCaseCode').textContent=sharedCaseCode
+  $('sharedCaseHeading').textContent=sharedCaseAction==='verify'?'A neighbor asked you to verify this case':'A Community Assist case was shared with you'
+  const box=$('sharedCaseBody')
+  box.innerHTML='<p class="empty">Loading shared case…</p>'
+  try{
+    const u=new URL(fn('issue-detail'));u.searchParams.set('caseCode',sharedCaseCode)
+    const r=await fetch(u,{headers:{apikey:KEY}}),p=await r.json()
+    if(!r.ok)throw new Error(p.error||'Unable to load the shared case.')
+    const issueId=p.canonicalIssueId||p.issueId||''
+    const title=p.title||p.issue?.title||'Community issue'
+    const publicCaseSummary=String(p.issue?.public_summary||p.case?.publicSummary||'').trim()
+    const locationLabel=p.locationLabel||p.location_label||p.issue?.locationLabel||p.issue?.location_label||'Public location not shown'
+    const verification=p.verification||{}
+    const totalVerifiers=verification.total??p.verifierCount??0
+    const supporterCount=p.supporterCount??p.supporter_count??0
+    const state=verification.state||verification.verificationState||p.verificationState||p.verification_state||'unverified'
+    const agency=p.agency?.shortName||p.agency?.short_name||p.responsibleAgency?.shortName||p.responsibleAgency?.short_name||''
+    const official=p.officialStatus||p.official_status||''
+    const minimumResidents=Number(verification.minimumIndependentResidents||verification.minimum_independent_residents||2)
+    const consensusShare=Number(verification.consensusShare||verification.consensus_share||.6)
+    const consensusReached=Boolean(verification.consensusReached||verification.consensus_reached||['verified_fixed','still_broken','partly_fixed'].includes(String(state)))
+    const remainingMinimum=Math.max(0,minimumResidents-Number(totalVerifiers||0))
+    let consensusBlock=''
+    if(consensusReached){
+      consensusBlock=`<div class="consensus-handoff reached"><b>Resident consensus reached</b><div class="tiny">${esc(String(state).replaceAll('_',' '))} is supported by independent resident verification.</div></div>`
+    }else if(Number(totalVerifiers||0)>0){
+      const message=remainingMinimum>0?`${remainingMinimum} more independent resident${remainingMinimum===1?'':'s'} needed before a public consensus can be set.`:`The minimum number of residents has responded, but the votes do not yet meet the ${Math.round(consensusShare*100)}% consensus threshold.`
+      consensusBlock=`<div class="consensus-handoff"><b>${remainingMinimum===1?'One more independent resident needed':'Consensus still pending'}</b><div class="tiny">${esc(message)}</div><div class="handoff-actions"><button id="sharedInviteVerifier" class="primary">Invite another resident to verify</button></div></div>`
+    }
+    const invite=sharedCaseAction==='verify'?'<div class="invite-note"><b>Why you were sent this</b><div class="tiny">Community Assist uses independent resident observations. Your response is counted separately from the person who shared the case.</div></div>':''
+    const publicSummary=`<div class="badges"><span class="case-code">${esc(p.caseCode||sharedCaseCode)}</span><span class="badge">${esc(String(state).replaceAll('_',' '))}</span>${agency?`<span class="badge blue">${esc(agency)}</span>`:''}</div><h3>${esc(title)}</h3>${publicCaseSummary?`<p>${esc(publicCaseSummary)}</p>`:''}<p>${esc(locationLabel)}</p><div class="shared-meta"><span><b>${supporterCount}</b> supporters</span><span><b>${totalVerifiers}</b> verifiers</span>${official?`<span><b>${esc(official)}</b> official</span>`:''}</div>${invite}`
+    if(!session){
+      box.innerHTML=publicSummary+`<div class="shared-actions"><button class="primary" id="sharedSignIn">Sign in to ${sharedCaseAction==='verify'?'verify':'participate'}</button><button id="sharedViewDetails">View public details</button></div><div id="sharedDetails"></div><p class="tiny">Your identity is never added to the public issue record.</p>`
+      $('sharedSignIn').onclick=showAuth
+      $('sharedViewDetails').onclick=()=>renderSharedDetails(p)
+      return
+    }
+    const{res:pr,payload:participation}=await fetchAuth('case-participation',{caseCode:p.caseCode||sharedCaseCode})
+    if(!pr.ok)throw new Error(participation.error||'Unable to load your participation status.')
+    const current=participation.verification?.status||''
+    const currentBlock=current?`<div class="existing-vote"><b>Your current verification</b><div>${esc(current.replaceAll('_',' '))}</div><div class="tiny">You can update it if the condition changed. Updating your vote does not create a second verifier.</div></div>`:''
+    const supportButton=participation.supported?'':'<button id="sharedSupport">Support & track this case</button>'
+    const duplicateButton=participation.tracking?'<button id="sharedDuplicateBtn">Suggest duplicate</button>':''
+    box.innerHTML=publicSummary+currentBlock+consensusBlock+`<div class="shared-verify"><b>${current?'Update what you see now':'What do you see now?'}</b><div class="choices"><button data-shared-v="verified_fixed">✓ Fixed</button><button data-shared-v="partly_fixed">◐ Partly fixed</button><button data-shared-v="still_broken">✕ Still broken</button></div><label class="upload"><b>Optional photo evidence</b><input id="sharedEvidence" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"><label class="tiny consent"><input id="sharedEvidenceConsent" type="checkbox"> Allow a privacy-sanitized copy to be public after review</label></label></div><div class="shared-actions">${supportButton}${duplicateButton}<button id="sharedDetailsBtn">View public details</button><button id="sharedFlagBtn">Report privacy/content concern</button></div><div id="sharedActionMsg" aria-live="polite"></div><div id="sharedDuplicateBox"></div><div id="sharedFlagBox"></div><div id="sharedDetails"></div>`
+    document.querySelectorAll('[data-shared-v]').forEach(b=>b.onclick=()=>verifySharedCase(issueId,b.dataset.sharedV,b))
+    if($('sharedInviteVerifier'))$('sharedInviteVerifier').onclick=()=>shareCase(issueId,p.caseCode||sharedCaseCode,'verify')
+    if($('sharedSupport'))$('sharedSupport').onclick=()=>supportSharedCase(issueId,$('sharedSupport'))
+    if($('sharedDuplicateBtn'))$('sharedDuplicateBtn').onclick=()=>showDuplicateSuggestion(issueId)
+    $('sharedDetailsBtn').onclick=()=>renderSharedDetails(p)
+    $('sharedFlagBtn').onclick=()=>showCaseFlagForm(issueId,'sharedFlagBox')
+  }catch(e){box.innerHTML=`<div class="notice err">${esc(errorMessage(e,'Unable to load the shared case.'))}</div>`}
+}
+function renderSharedDetails(p){
+  const box=$('sharedDetails');if(!box)return
+  const ex=p.serviceExpectations?.expectations||[],guidance=p.processGuidance?.items||[],timeline=p.timeline||[]
+  box.innerHTML=`${ex.length?`<div class="trustbox"><b>Published service guidance</b>${ex.map(x=>`<div class="guidance"><b>${esc(x.label||'Official guidance')}</b><small>${esc(x.detail||'')}</small></div>`).join('')}</div>`:''}${guidance.length?`<div class="trustbox"><b>Official process guidance</b>${guidance.map(g=>`<div class="guidance"><b>${esc(g.label||g.guidanceType||'Official process')}</b><small>${esc(g.detail||'')}</small></div>`).join('')}</div>`:''}${timeline.length?`<div class="trustbox"><b>Recent case history</b>${timeline.slice(-6).map(t=>`<div class="guidance"><b>${esc(t.label||t.title||'Case update')}</b><small>${esc(t.detail||'')}</small></div>`).join('')}</div>`:''}`
+}
+async function supportSharedCase(issueId,button){
+  return runLocked('support:'+issueId,button,'Saving…',async()=>{
+    try{
+      const{res,payload}=await callAuth('support-issue',{issueId})
+      if(!res.ok)throw new Error(payload.error||'Unable to support this case.')
+      await loadSharedCase();await loadMine();await loadResidentHome()
+      if($('sharedActionMsg'))$('sharedActionMsg').innerHTML='<div class="success"><b>Tracking started.</b><br>You are now supporting and tracking this case.</div>'
+    }catch(e){if($('sharedActionMsg'))$('sharedActionMsg').innerHTML=`<div class="notice err">${esc(errorMessage(e,'Unable to support this case.'))}</div>`}
+  })
+}
+async function verifySharedCase(issueId,status,button){
+  return runLocked('verify:'+issueId,button,'Saving…',async()=>{
+    try{
+      const file=$('sharedEvidence')?.files?.[0]
+      const photo=file?await upload(file,`verification/${issueId}`):''
+      const allowPublicEvidence=Boolean($('sharedEvidenceConsent')?.checked)
+      const{res,payload}=await callAuth('verify-issue',{issueId,status,photoPath:photo,allowPublicEvidence})
+      if(!res.ok)throw new Error(payload.error||'Unable to save verification.')
+      const total=Number(payload.totalVerifiers||1)
+      const reached=Boolean(payload.consensusReached)
+      await loadSharedCase();await loadMine();await loadResidentHome();await loadArea()
+      const msg=$('sharedActionMsg')
+      if(msg){
+        const detail=reached?`Community consensus is now ${String(payload.verificationState||status).replaceAll('_',' ')}.`:`${total} independent verification${total===1?'':'s'} recorded. Consensus is still pending.`
+        msg.innerHTML=`<div class="success"><b>Your verification was recorded.</b><br>${esc(detail)}</div>${reached?'':`<div class="issue-actions"><button id="postVerifyShare" class="primary">Invite another resident to verify</button></div>`}`
+        if($('postVerifyShare'))$('postVerifyShare').onclick=()=>shareCase(issueId,sharedCaseCode,'verify')
+      }
+    }catch(e){if($('sharedActionMsg'))$('sharedActionMsg').innerHTML=`<div class="notice err">${esc(errorMessage(e,'Unable to save verification.'))}</div>`}
+  })
+}
+function showAuth(){ $('authBox').classList.add('show'); $('authBox').scrollIntoView({behavior:'smooth',block:'center'}) }
+function deferSessionLoads(){
+  const jobs=[loadNotifications,loadWatches,loadOwnerPilot,loadOwnerOps]
+  const run=()=>{jobs.forEach((job,index)=>setTimeout(()=>{try{job()}catch(_){}},index*120))}
+  if('requestIdleCallback' in window)window.requestIdleCallback(run,{timeout:1200});else setTimeout(run,220)
+}
+async function authState(){const{data}=await supabase.auth.getSession();session=data.session;$('statusLabel').textContent=session?'Signed in':'Not signed in';$('authBtn').textContent=session?'Sign out':'Sign in';if($('myCard'))$('myCard').hidden=!session;if($('notificationsCard'))$('notificationsCard').hidden=!session;if($('residentHomeCard'))$('residentHomeCard').hidden=!session;if(session){$('authBox')?.classList.remove('show');loadResidentHome();loadMine();await loadSharedCase();deferSessionLoads();if(validSharedCase)setTimeout(()=>$('sharedCaseCard')?.scrollIntoView({behavior:'smooth',block:'start'}),120)}else{if($('ownerPilotCard'))$('ownerPilotCard').hidden=true;if($('ownerOpsCard'))$('ownerOpsCard').hidden=true;if($('ownerReviewCard')){$('ownerReviewCard').hidden=true;$('reviewQueueContent').innerHTML='<div class="review-empty">Sign in with an authorized owner or moderator account to review queues.</div>';reviewQueues=null;moderationRefs=null}if($('watchCenterCard'))$('watchCenterCard').hidden=true;if($('notificationPrefsCard'))$('notificationPrefsCard').hidden=true;if($('privacyCard'))$('privacyCard').hidden=true;loadSharedCase()}}
+if($('categoryOverride')){CATS.forEach(c=>{const o=document.createElement('option');o.value=c[0];o.textContent=c[1];$('categoryOverride').appendChild(o)});$('categoryOverride').onchange=()=>{route();saveReportDraft()}}
+$('description').oninput=()=>{hideSubmitReview();$('toLocation').disabled=!$('description').value.trim();route();saveReportDraft()}
+$('reportPhoto').onchange=()=>{$('reportPhotoName').textContent=$('reportPhoto').files?.[0]?.name||''}
+$('toLocation').onclick=()=>setStep(2);$('back1').onclick=()=>setStep(1);$('back2').onclick=()=>setStep(2)
+async function searchNYCLocation(){
+  const q=String($('addressSearch')?.value||'').trim()
+  const box=$('addressSearchResults')
+  if(!box)return
+  if(q.length<3){box.innerHTML='<div class="notice err">Enter at least 3 characters.</div>';return}
+  box.innerHTML='<div class="notice">Searching NYC Planning address data…</div>'
+  try{
+    const r=await fetchWithTimeout(fn('location-search')+'?text='+encodeURIComponent(q),{headers:{apikey:KEY}},15000)
+    const payload=await r.json()
+    if(!r.ok)throw new Error(payload.error||'Unable to search NYC addresses.')
+    const items=Array.isArray(payload.results)?payload.results:[]
+    if(!items.length){box.innerHTML='<p class="empty">No matching NYC address or place was found.</p>';return}
+    box.innerHTML=items.map((i,idx)=>`<div class="issue"><b>${esc(i.label)}</b>${i.neighborhood?`<small>${esc(i.neighborhood)}</small>`:''}<div class="issue-actions"><button data-location-result="${idx}">Use this location</button></div></div>`).join('')
+    box.querySelectorAll('[data-location-result]').forEach(btn=>btn.onclick=()=>{
+      const i=items[Number(btn.dataset.locationResult)]
+      if(!i||!Number.isFinite(Number(i.latitude))||!Number.isFinite(Number(i.longitude)))return
+      coords={lat:Number(i.latitude),lng:Number(i.longitude)}
+      area={...coords}
+      areaIsUserChosen=true
+      $('locationLabel').value=i.label
+      updateLocationUI()
+      box.innerHTML=`<div class="success"><b>Location confirmed</b><br>${esc(i.label)}</div>`
+      loadArea()
+    })
+  }catch(e){box.innerHTML=`<div class="notice err">${esc(errorMessage(e,'Unable to search NYC addresses.'))}</div>`}
+}
+function updateSubmitAvailability(){
+  const hasLocation=Boolean(coords&&$('locationLabel')?.value.trim())
+  const safetyReady=safetyScreening==='safe'||(safetyScreening==='danger'&&Boolean($('safetyAck')?.checked))
+  if($('submitCheck'))$('submitCheck').disabled=!(hasLocation&&safetyReady)
+}
+function setSafetyScreening(value){
+  safetyScreening=value
+  if($('safetySafe'))$('safetySafe').classList.toggle('primary',value==='safe')
+  if($('safetyDanger'))$('safetyDanger').classList.toggle('primary',value==='danger')
+  if($('safetyDangerPanel'))$('safetyDangerPanel').hidden=value!=='danger'
+  if($('safetyStatus'))$('safetyStatus').textContent=value==='safe'?'No immediate danger selected.':value==='danger'?'Emergency guidance shown. Acknowledge before documenting this issue.':'Choose one before submitting.'
+  if(value!=='danger'&&$('safetyAck'))$('safetyAck').checked=false
+  updateSubmitAvailability()
+}
+function updateLocationUI(){
+  if(!coords)return
+  $('coordsText').textContent=`${coords.lat.toFixed(5)}, ${coords.lng.toFixed(5)}`
+  $('locationLabel').value=$('locationLabel').value||'Current location'
+  $('locationSummaryText').textContent=`Location set · ${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`
+  updateSubmitAvailability()
+  updateLocationPrivacyNote()
+  saveReportDraft()
+}
+function captureReportLocation(scrollToFlow=false){
+  if(!navigator.geolocation){notice('flowMsg','Location is not available in this browser.',true);return}
+  navigator.geolocation.getCurrentPosition(p=>{
+    coords={lat:p.coords.latitude,lng:p.coords.longitude}
+    area={...coords}
+    areaIsUserChosen=true
+    updateWatchLocationStatus()
+    updateLocationUI()
+    $('areaTitle').textContent='Around your current location'
+    loadArea()
+    if(scrollToFlow)document.querySelector('.card:nth-of-type(2)')?.scrollIntoView({behavior:'smooth'})
+  },err=>{
+    const msg=err?.code===1?'Location permission is blocked. Allow location access in your browser settings, or use the NYC address search below.':err?.code===2?'Your current location is unavailable right now. Try again outdoors or use the NYC address search below.':err?.code===3?'Location took too long to respond. Try again, or use the NYC address search below.':'Could not access location. Use the NYC address search below if GPS is unavailable.'
+    notice('flowMsg',msg,true)
+  },{enableHighAccuracy:true,timeout:12000,maximumAge:15000})
+}
+$('captureLocation').onclick=()=>captureReportLocation(false)
+$('quickLocation').onclick=()=>captureReportLocation(true)
+if($('addressSearchBtn'))$('addressSearchBtn').onclick=searchNYCLocation
+if($('addressSearch'))$('addressSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchNYCLocation()}})
+if($('safetySafe'))$('safetySafe').onclick=()=>setSafetyScreening('safe')
+if($('safetyDanger'))$('safetyDanger').onclick=()=>setSafetyScreening('danger')
+if($('safetyAck'))$('safetyAck').onchange=updateSubmitAvailability
+if($('notificationsBtn'))$('notificationsBtn').onclick=()=>{if(!session){showAuth();return}$('notificationsCard').hidden=false;loadNotifications();$('notificationsCard').scrollIntoView({behavior:'smooth',block:'start'})}
+if($('notificationPrefsBtn'))$('notificationPrefsBtn').onclick=()=>{loadNotificationPreferences();$('notificationPrefsCard').scrollIntoView({behavior:'smooth',block:'start'})}
+if($('closeNotificationPrefs'))$('closeNotificationPrefs').onclick=()=>{$('notificationPrefsCard').hidden=true}
+if($('saveNotificationPrefs'))$('saveNotificationPrefs').onclick=saveNotificationPreferences
+if($('previewDigest24'))$('previewDigest24').onclick=()=>previewDigest(24)
+if($('previewDigest168'))$('previewDigest168').onclick=()=>previewDigest(168)
+if($('watchesBtn'))$('watchesBtn').onclick=()=>{if(!session){showAuth();return}$('watchCenterCard').hidden=false;loadWatches();$('watchCenterCard').scrollIntoView({behavior:'smooth',block:'start'})}
+if($('privacyBtn'))$('privacyBtn').onclick=()=>{if(!session){showAuth();return}loadPrivacyCenter();$('privacyCard').scrollIntoView({behavior:'smooth',block:'start'})}
+if($('closePrivacy'))$('closePrivacy').onclick=()=>{$('privacyCard').hidden=true}
+if($('downloadMyData'))$('downloadMyData').onclick=downloadMyData
+if($('requestDeleteAccount'))$('requestDeleteAccount').onclick=requestDeleteAccount
+if($('refreshWatches'))$('refreshWatches').onclick=loadWatches
+if($('clearWatchCategories'))$('clearWatchCategories').onclick=clearWatchCategories
+renderWatchCategoryFilter()
+if($('createAreaWatch'))$('createAreaWatch').onclick=createAreaWatch
+if($('resolveWatchCivic'))$('resolveWatchCivic').onclick=resolveWatchCivic
+if($('createAgencyWatch'))$('createAgencyWatch').onclick=createAgencyWatch
+$('myIssuesBtn').onclick=()=>{
+  if(!session){showAuth();return}
+  $('myCard').hidden=false
+  loadMine()
+  $('myCard').scrollIntoView({behavior:'smooth',block:'start'})
+}
+$('locationLabel').oninput=()=>{hideSubmitReview();updateSubmitAvailability();updateLocationPrivacyNote();saveReportDraft()}
+if($('publicSummary'))$('publicSummary').oninput=()=>{hideSubmitReview();updatePublicSummaryCount();saveReportDraft()}
+if($('reportShareConsent'))$('reportShareConsent').onchange=hideSubmitReview
+if($('categoryOverride'))$('categoryOverride').addEventListener('change',hideSubmitReview)
+document.querySelectorAll('input[name="locationPrecision"]').forEach(x=>x.addEventListener('change',hideSubmitReview))
+async function submit(createAnyway=false,button=null){if(!session){showAuth();notice('flowMsg','Sign in first so the report can be tied to your private account.');return}if(!coords){notice('flowMsg','Add a location before submitting.',true);return}return runLocked('report-submit',button,createAnyway?'Creating separate case…':'Checking nearby…',async()=>{try{notice('flowMsg','Checking nearby issues…');let photo=pendingPhoto;if(!photo&&$('reportPhoto').files?.[0]){notice('flowMsg','Uploading photo evidence…');photo=await upload($('reportPhoto').files[0],'reports');pendingPhoto=photo}const r=route();const{res,payload}=await callAuth('submit-issue',{categoryKey:r.key,title:r.label,description:$('description').value,publicSummary:String($('publicSummary')?.value||'').trim(),locationLabel:$('locationLabel').value,lat:coords.lat,lng:coords.lng,locationPrecision:selectedLocationPrecision(),createAnyway,clientSubmissionKey:ensureSubmissionKey(),photoPath:photo,allowPublicEvidence:Boolean($('reportShareConsent')?.checked),safetyScreening,safetyAcknowledged:Boolean($('safetyAck')?.checked)});if(res.status===409&&payload.code==='POSSIBLE_DUPLICATE'){duplicates=payload.candidates||[];await renderDup();setStep(3);notice('flowMsg','A similar Community Assist issue already exists nearby.');return}if(!res.ok)throw new Error(payload.error||'Unable to create issue.');pendingPhoto='';clearReportDraft();const replayMessage=payload.idempotentReplay?(payload.message||'This report was already received, so Community Assist reopened the existing case instead of creating a duplicate.') : '';resetSubmissionKey();setStep(4);await renderSubmissionSuccess(payload.issueId,'created',Boolean(payload.evidenceAttached),payload.publicSummaryWarning||'',replayMessage);await loadArea();await loadMine()}catch(e){const msg=errorMessage(e,'Unable to create issue.');notice('flowMsg',msg,true);if(/connection|offline|taking too long/i.test(msg)&&session){$('flowMsg').innerHTML+=`<div class="issue-actions"><button id="checkMineAfterSubmit">Check My Issues before retrying</button></div>`;if($('checkMineAfterSubmit'))$('checkMineAfterSubmit').onclick=()=>{$('myCard').hidden=false;loadMine();$('myCard').scrollIntoView({behavior:'smooth',block:'start'})}}}})}
+async function renderDup(){
+  const box=$('duplicateList')
+  if(!box)return
+  if(!duplicates.length){box.innerHTML='<p class="empty">No duplicate candidates returned.</p>';return}
+  box.innerHTML='<div class="notice">Loading public-safe details for nearby cases…</div>'
+  const enriched=await Promise.all(duplicates.map(async d=>{
+    const id=d.issue_id||d.id||''
+    try{
+      const r=await fetch(fn('issue-detail')+'?issueId='+encodeURIComponent(id),{headers:{apikey:KEY}})
+      const p=await r.json()
+      return {...d,_detail:r.ok?p:null}
+    }catch{return {...d,_detail:null}}
+  }))
+  box.innerHTML=enriched.map(d=>{
+    const p=d._detail||{}
+    const issue=p.issue||{}
+    const caseCode=p.caseCode||p.requestedCaseCode||''
+    const title=issue.title||'Similar nearby issue'
+    const location=issue.location_label||issue.locationLabel||'Public location withheld'
+    const status=String(issue.community_status||issue.communityStatus||d.community_status||'reported').replaceAll('_',' ')
+    const category=issue.category_label||issue.categoryLabel||issue.category_key||d.category_key||'Issue'
+    const summary=String(issue.public_summary||'').trim()
+    const supporters=Number(p.supporterCount||0)
+    const age=issue.first_reported_at?Math.max(0,Math.floor((Date.now()-new Date(issue.first_reported_at).getTime())/86400000)):null
+    const distance=d.distance_m===null||d.distance_m===undefined?'Nearby':`${Math.round(Number(d.distance_m))} m away`
+    return `<div class="issue"><div class="badges">${caseCode?`<span class="case-code">${esc(caseCode)}</span>`:''}<span class="badge">${esc(category)}</span><span class="badge">${esc(status)}</span></div><h3>${esc(title)}</h3>${summary?`<p>${esc(summary)}</p>`:''}<p>${esc(location)} · ${esc(distance)}</p><div class="stats"><span><b>${supporters}</b> supporters</span>${age!==null?`<span><b>${age}</b> days</span>`:''}</div><div class="issue-actions"><button class="primary" data-j="${esc(d.issue_id||d.id||'')}">Same problem · support & track</button><button data-dup-view="${esc(d.issue_id||d.id||'')}">View public details</button></div><div id="dupdetail_${esc(d.issue_id||d.id||'')}"></div></div>`
+  }).join('')
+  box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>join(b.dataset.j,b))
+  box.querySelectorAll('[data-dup-view]').forEach(b=>b.onclick=()=>loadPublicDetail(b.dataset.dupView,'dupdetail_'+b.dataset.dupView))
+}
+async function join(id,button){return runLocked('join:'+id,button,'Joining…',async()=>{try{const{res,payload}=await callAuth('support-issue',{issueId:id,description:$('description').value,photoPath:pendingPhoto,allowPublicEvidence:Boolean($('reportShareConsent')?.checked)});if(!res.ok)throw new Error(payload.error||'Unable to support issue.');pendingPhoto='';clearReportDraft();resetSubmissionKey();setStep(4);await renderSubmissionSuccess(payload.issueId||id,'joined',Boolean(payload.evidenceAttached));await loadArea();await loadMine()}catch(e){notice('flowMsg',errorMessage(e,'Unable to support issue.'),true)}})}
+function renderSuccessPrimaryAction(issueId,payload){
+  const a=payload?.primaryAction||payload?.action||{key:'track',label:'Keep tracking',reason:'Community Assist will keep this issue in your tracked cases.'}
+  let action=''
+  if(a.key==='routing_context')action='<button id="successPrimaryAction" class="primary">Answer now</button>'
+  else if(a.key==='official_reporting'||a.key==='official_reference_pending')action='<button id="successPrimaryAction" class="primary">Open official reporting path</button>'
+  else if(a.key==='invite_verification')action='<button id="successPrimaryAction" class="primary">Invite another resident</button>'
+  else if(a.key==='verify')action='<button id="successPrimaryAction" class="primary">Verify condition</button>'
+  else if(a.key==='emergency_guidance')action='<a class="linkbtn primary" href="tel:911">Call 911</a>'
+  else if(a.key==='routing_triage')action='<button disabled>Routing review pending</button>'
+  else if(!['resolved'].includes(a.key))action='<button id="successPrimaryAction">Open in My Issues</button>'
+  $('successNext').innerHTML=`<div class="primary-call"><div><span class="eyebrow">WHAT HAPPENS NEXT</span><b>${esc(a.label||'Keep tracking this case')}</b><small>${esc(a.reason||'Community Assist will keep this issue in your tracked cases.')}</small></div>${action}</div>`
+  const btn=$('successPrimaryAction')
+  if(!btn)return
+  btn.onclick=async()=>{
+    const box=$('successDetail')
+    if(a.key==='routing_context')return loadRoutingContext(issueId,box)
+    if(a.key==='official_reporting'||a.key==='official_reference_pending')return loadOfficialReportingPath(issueId,box)
+    if(a.key==='invite_verification')return shareCase(issueId,lastSuccessCaseCode,'verify')
+    if(a.key==='verify'){
+      box.innerHTML=`<div class="field-panel"><b>What do you see now?</b><p class="tiny">Your response counts as one independent resident observation.</p><div class="verify-choices"><button data-success-v="verified_fixed">✓ Fixed</button><button data-success-v="partly_fixed">◐ Partly fixed</button><button data-success-v="still_broken">✕ Still broken</button></div><div id="successVerifyMsg"></div></div>`
+      box.querySelectorAll('[data-success-v]').forEach(v=>v.onclick=()=>verifyFromSuccess(issueId,v.dataset.successV,v))
+      return
+    }
+    return openSuccessInMyIssues()
+  }
+}
+async function refreshSuccessPrimaryAction(issueId){
+  if(!session||!issueId||lastSuccessIssueId!==issueId)return
+  try{
+    const{res,payload}=await fetchAuth('case-action-center?issueId='+encodeURIComponent(issueId))
+    if(!res.ok)return
+    lastSuccessCaseCode=payload.canonical?.caseCode||lastSuccessCaseCode
+    if(lastSuccessCaseCode)$('successCaseCode').textContent=lastSuccessCaseCode
+    renderSuccessPrimaryAction(issueId,payload)
+  }catch(_){}
+}
+async function verifyFromSuccess(issueId,status,button){
+  return runLocked('success-verify:'+issueId,button,'Saving…',async()=>{
+    const msg=$('successVerifyMsg')
+    try{
+      const{res,payload}=await callAuth('verify-issue',{issueId,status})
+      if(!res.ok)throw new Error(payload.error||'Unable to save verification.')
+      const total=Number(payload.totalVerifiers||1),reached=Boolean(payload.consensusReached)
+      if(msg)msg.innerHTML=`<div class="success"><b>Verification saved.</b><br>${esc(reached?`Community consensus is now ${String(payload.verificationState||status).replaceAll('_',' ')}.`:`${total} independent verification${total===1?'':'s'} recorded. Consensus is still pending.`)}</div>`
+      await loadMine();await loadResidentHome();await loadArea();await refreshSuccessPrimaryAction(issueId)
+    }catch(e){if(msg)msg.innerHTML=`<div class="notice err">${esc(errorMessage(e,'Unable to save verification.'))}</div>`}
+  })
+}
+async function renderSubmissionSuccess(issueId,mode='created',evidenceAttached=false,warning='',replayMessage=''){
+  lastSuccessIssueId=issueId||'';lastSuccessCaseCode=''
+  $('successCaseCode').textContent='CASE PENDING'
+  $('successTitle').textContent=mode==='joined'?'You joined an existing case':'Your issue is now tracked'
+  $('successText').textContent=(mode==='joined'?'You are now supporting and tracking the existing Community Assist case.':'You created a Community Assist case and are automatically supporting and tracking it.')+(evidenceAttached?' Photo evidence was attached privately.':'')
+  $('successNext').innerHTML='<small>Loading the next step…</small>'
+  $('successDetail').innerHTML=(warning?`<div class="notice err"><b>Case saved.</b><br>${esc(warning)}</div>`:'')+(replayMessage?`<div class="notice"><b>Duplicate submission prevented.</b><br>${esc(replayMessage)}</div>`:'')
+  try{
+    const{res,payload}=await fetchAuth('case-action-center?issueId='+encodeURIComponent(issueId))
+    if(!res.ok)throw new Error(payload.error||'Unable to load the next action.')
+    lastSuccessIssueId=payload.canonical?.issueId||issueId
+    lastSuccessCaseCode=payload.canonical?.caseCode||''
+    $('successCaseCode').textContent=lastSuccessCaseCode||'COMMUNITY ASSIST CASE'
+    renderSuccessPrimaryAction(lastSuccessIssueId,payload)
+  }catch(e){
+    $('successNext').innerHTML=`<small>${esc(e.message||'The case was saved. Open My Issues to continue.')}</small>`
+  }
+}
+async function showSuccessProgress(){
+  if(!lastSuccessIssueId)return
+  const box=$('successDetail');box.innerHTML='<div class="notice">Loading case progress…</div>'
+  try{
+    const{res,payload}=await fetchAuth('case-progress?issueId='+encodeURIComponent(lastSuccessIssueId))
+    if(!res.ok)throw new Error(payload.error||'Unable to load case progress.')
+    const steps=payload.steps||[]
+    box.innerHTML=`<div class="trustbox"><b>Case progress · ${payload.progressPercent||0}%</b><div class="progressline">${steps.map(x=>`<span class="${x.state==='complete'?'done':(x.state==='current'||x.state==='blocked')?'now':''}"></span>`).join('')}</div><div class="progress-steps">${steps.map(x=>`<div class="progress-step ${esc(x.state||'')}"><b>${esc(x.label||'Step')}</b><small>${esc(x.detail||'')}</small></div>`).join('')}</div></div>`
+  }catch(e){box.innerHTML=`<div class="notice err">${esc(e.message)}</div>`}
+}
+async function openSuccessInMyIssues(){
+  if(!session){showAuth();return}
+  $('myCard').hidden=false
+  await loadMine()
+  $('myCard').scrollIntoView({behavior:'smooth',block:'start'})
+}
+$('submitCheck').onclick=showSubmitReview;if($('editSubmitReview'))$('editSubmitReview').onclick=hideSubmitReview;if($('confirmSubmit'))$('confirmSubmit').onclick=()=>submit(false,$('confirmSubmit'));$('differentProblem').onclick=()=>submit(true,$('differentProblem'));$('successContinue').onclick=openSuccessInMyIssues;$('successProgress').onclick=showSuccessProgress;$('successShare').onclick=()=>lastSuccessIssueId&&shareCase(lastSuccessIssueId,lastSuccessCaseCode,'view');$('anotherReport').onclick=()=>{lastSuccessIssueId='';lastSuccessCaseCode='';pendingPhoto='';resetSubmissionKey();coords=null;safetyScreening='';$('description').value='';if($('publicSummary'))$('publicSummary').value='';updatePublicSummaryCount();if($('categoryOverride'))$('categoryOverride').value='';$('locationLabel').value='';$('reportPhoto').value='';$('reportPhotoName').textContent='';if($('reportShareConsent'))$('reportShareConsent').checked=false;const exact=document.querySelector('input[name="locationPrecision"][value="exact"]');if(exact)exact.checked=true;updateLocationPrivacyNote();$('coordsText').textContent='';$('locationSummaryText').textContent='Not set yet · you can set it now or in Step 2.';$('toLocation').disabled=true;if($('safetyAck'))$('safetyAck').checked=false;setSafetyScreening('');updateSubmitAvailability();clearReportDraft();route();setStep(1);notice('flowMsg','')}
+$('startReport').onclick=()=>{setStep(1);document.querySelector('.card:nth-of-type(2)')?.scrollIntoView({behavior:'smooth'})}
+$('aroundMe').onclick=()=>navigator.geolocation&&navigator.geolocation.getCurrentPosition(p=>{area={lat:p.coords.latitude,lng:p.coords.longitude};areaIsUserChosen=true;updateWatchLocationStatus();$('areaTitle').textContent='Around your current location';loadArea()},()=>notice('flowMsg','Could not access location.',true))
+$('refreshCommunity').onclick=loadArea;$('refreshPulse').onclick=loadPulse;$('refreshMine').onclick=loadMine;if($('refreshNotifications'))$('refreshNotifications').onclick=loadNotifications;if($('markAllRead'))$('markAllRead').onclick=markAllNotificationsRead
+if($('attentionBtn'))$('attentionBtn').onclick=()=>{if(!session){showAuth();return}$('residentHomeCard').hidden=false;loadResidentHome();$('residentHomeCard').scrollIntoView({behavior:'smooth',block:'start'})}
+if($('refreshHome'))$('refreshHome').onclick=loadResidentHome
+if($('refreshPilot'))$('refreshPilot').onclick=loadOwnerPilot;if($('refreshOwnerOps'))$('refreshOwnerOps').onclick=loadOwnerOps;if($('savePilotResult'))$('savePilotResult').onclick=savePilotResult;if($('openReviewCenter'))$('openReviewCenter').onclick=()=>loadReviewCenter(true);if($('refreshReviewCenter'))$('refreshReviewCenter').onclick=()=>loadReviewCenter(false);if($('closeReviewCenter'))$('closeReviewCenter').onclick=()=>{$('ownerReviewCard').hidden=true};document.querySelectorAll('[data-review-tab]').forEach(b=>b.onclick=()=>setReviewTab(b.dataset.reviewTab))
+if($('refreshMethodology'))$('refreshMethodology').onclick=loadMethodology
+if($('civicDashboardBtn'))$('civicDashboardBtn').onclick=()=>{$('civicDashboardCard').hidden=false;$('civicDashboardCard').scrollIntoView({behavior:'smooth',block:'start'})}
+if($('closeCivicDashboard'))$('closeCivicDashboard').onclick=()=>{$('civicDashboardCard').hidden=true}
+if($('loadCivicDashboard'))$('loadCivicDashboard').onclick=loadCivicDashboard
+if($('useLocationForCivic'))$('useLocationForCivic').onclick=resolveCivicDashboardFromLocation
+$('civicScopeType').onchange=()=>{$('civicScopeCode').placeholder=$('civicScopeType').value==='council_district'?'Council district, e.g. 21':'Community district code, e.g. 404'}
+if($('browseIssuesBtn'))$('browseIssuesBtn').onclick=()=>{$('browseIssuesCard').hidden=false;buildBrowseCategories();loadBrowse(true);$('browseIssuesCard').scrollIntoView({behavior:'smooth',block:'start'})}
+if($('closeBrowseIssues'))$('closeBrowseIssues').onclick=()=>{$('browseIssuesCard').hidden=true}
+if($('runBrowseSearch'))$('runBrowseSearch').onclick=()=>loadBrowse(true)
+if($('clearBrowseSearch'))$('clearBrowseSearch').onclick=clearBrowse
+if($('browseLoadMore'))$('browseLoadMore').onclick=()=>loadBrowse(false)
+if($('browseQuery'))$('browseQuery').onkeydown=e=>{if(e.key==='Enter')loadBrowse(true)}
+buildBrowseCategories()
+if($('findCaseBtn'))$('findCaseBtn').onclick=()=>{$('caseLookupCard').hidden=false;$('caseLookupInput').focus();$('caseLookupCard').scrollIntoView({behavior:'smooth',block:'center'})}
+if($('closeCaseLookup'))$('closeCaseLookup').onclick=()=>$('caseLookupCard').hidden=true
+if($('caseLookupGo'))$('caseLookupGo').onclick=openCaseLookup
+if($('caseLookupInput'))$('caseLookupInput').onkeydown=e=>{if(e.key==='Enter')openCaseLookup()}
+document.querySelectorAll('input[name="locationPrecision"]').forEach(r=>r.onchange=()=>{updateLocationPrivacyNote();saveReportDraft()})
+updateLocationPrivacyNote()
+addEventListener('popstate',syncSharedCaseFromUrl)
+loadMethodology()
+$('authBtn').onclick=async()=>{if(session){await supabase.auth.signOut();await authState()}else showAuth()};$('closeAuth').onclick=()=>$('authBox').classList.remove('show')
+$('sendLink').onclick=async()=>{
+  const email=$('email').value.trim();
+  if(!email)return;
+  const btn=$('sendLink');
+  btn.disabled=true;
+  notice('authMsg','Sending sign-in link…');
+  const{error}=await supabase.auth.signInWithOtp({email,options:{shouldCreateUser:true,emailRedirectTo:location.origin+location.pathname+location.search}});
+  if(error){
+    const msg=(error.message||'').toLowerCase();
+    if(msg.includes('rate limit')){
+      notice('authMsg','Too many sign-in emails were requested during testing. Please try again a little later. Your account and reports are safe.',true);
+    }else if(msg.includes('not authorized')){
+      notice('authMsg','This test email is not yet authorized for the pilot. Community Assist needs its production email service connected before outside testers can sign in.',true);
+    }else{
+      notice('authMsg',errorMessage(error,'We could not send the sign-in email right now.'),true);
+    }
+    btn.disabled=false;
+    return;
+  }
+  notice('authMsg','Check your email for the Community Assist sign-in link.');
+  let remaining=60;
+  btn.textContent=`Send again in ${remaining}s`;
+  const timer=setInterval(()=>{
+    remaining-=1;
+    if(remaining<=0){clearInterval(timer);btn.disabled=false;btn.textContent='Email me a sign-in link';}
+    else btn.textContent=`Send again in ${remaining}s`;
+  },1000);
+}
+addEventListener('offline',()=>updateConnectivity(false));addEventListener('online',()=>updateConnectivity(true));updateConnectivity(false);resetSubmissionKey();supabase.auth.onAuthStateChange(()=>authState());restoreReportDraft();await authState();route();setStep(1);loadArea()</script>
+</body></html>
