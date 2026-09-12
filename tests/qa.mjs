@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, access } from 'node:fs/promises';
 import { JSDOM } from 'jsdom';
 
 const html = await readFile('dist/index.html', 'utf8');
@@ -7,6 +7,14 @@ assert.match(html, /id="ca-simplified-ui"/, 'simplified UI styles were not injec
 assert.match(html, /id="ca-simplified-ui-script"/, 'simplified UI script was not injected');
 assert.doesNotMatch(html, />NYC311 nearby</i, 'old NYC311 nearby block is still present');
 assert.doesNotMatch(html, />NYC OPEN DATA</i, 'old NYC Open Data branding is still present');
+
+let runtimeEdgeExists = true;
+try {
+  await access('netlify/edge-functions/community-assist-ui.ts');
+} catch {
+  runtimeEdgeExists = false;
+}
+assert.equal(runtimeEdgeExists, false, 'runtime Edge Function still exists after static build');
 
 const dom = new JSDOM(html, {
   url: 'https://community-assist-pilot.netlify.app/',
@@ -49,4 +57,4 @@ assert.ok(window.document.getElementById('caSaveArea'), 'ZIP watch action was no
 assert.ok(window.document.querySelectorAll('[data-follow-agency]').length >= 1, 'agency context was not returned for 11368');
 assert.ok(window.document.querySelectorAll('[data-follow-scope]').length >= 1, 'civic district context was not returned for 11368');
 
-console.log('QA PASS: simplified UI, mobile navigation, NYC311 removal, ZIP locality, agencies and civic context.');
+console.log('QA PASS: static delivery, simplified UI, mobile navigation, NYC311 removal, ZIP locality, agencies and civic context.');
