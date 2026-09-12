@@ -17,3 +17,10 @@ jobs:
           node-version: '24'
       - run: npm install
       - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: community-assist-verified-build
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
