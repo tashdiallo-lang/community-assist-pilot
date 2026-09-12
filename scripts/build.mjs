@@ -13,6 +13,14 @@ const safeLabels = "function compactActionLabels(root=document){\n    const set=
 if (!uiScript.includes(unsafeLabels)) throw new Error('Could not find action-label observer payload to harden.');
 uiScript = uiScript.replace(unsafeLabels, safeLabels);
 
+// iOS only opens the keyboard when focus remains inside the real user gesture.
+// The bottom navigation previously used only a synthetic click, so focus could be
+// lost even though the report form scrolled into view.
+const oldBottomReport = "n.querySelector('[data-bottom=\"report\"]').onclick=()=>click('startReport');";
+const newBottomReport = "n.querySelector('[data-bottom=\"report\"]').onclick=()=>{click('startReport');const d=$('description');if(d)d.focus({preventScroll:true})};";
+if (!uiScript.includes(oldBottomReport)) throw new Error('Could not find the mobile Report navigation handler to harden.');
+uiScript = uiScript.replace(oldBottomReport, newBottomReport);
+
 const actionUi = `
 <style id="ca-action-ui">
 .ca-flow-details,.ca-case-more{margin:10px 0;border:1px solid #dfe8e3;border-radius:14px;background:#f9fbfa;padding:0 11px}.ca-flow-details>summary,.ca-case-more>summary{cursor:pointer;font-weight:850;color:#315f4e;padding:11px 2px;list-style:none}.ca-flow-details>summary::-webkit-details-marker,.ca-case-more>summary::-webkit-details-marker{display:none}.ca-flow-details>summary:after,.ca-case-more>summary:after{content:'+';float:right}.ca-flow-details[open]>summary:after,.ca-case-more[open]>summary:after{content:'−'}.ca-flow-details .route,.ca-flow-details .upload{margin:7px 0}.ca-flow-details .route>b:first-child,.ca-flow-details .route>small:first-of-type{display:none}.ca-privacy-compact .privacy-choice small{display:none}.ca-privacy-compact #locationPrivacyNote,.ca-privacy-compact #publicLocationPreview{display:none}.ca-case-simple>.issue-actions{gap:6px}.ca-case-more{margin-top:8px}.ca-case-more .issue-actions{margin:0 0 10px}.ca-case-more .issue-actions button{font-size:.76rem;padding:.52rem .65rem}#step3>.route>p.tiny{display:none}.ca-flow-details label.tiny{display:block;margin-top:8px}@media(max-width:760px){.stepbar span{font-size:.68rem}.ca-flow-details,.ca-case-more{margin:8px 0}.ca-case-simple>.issue-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.ca-case-simple>.issue-actions button{width:100%;min-height:42px}.ca-case-more .issue-actions{display:grid;grid-template-columns:1fr 1fr}.ca-case-more .issue-actions button{width:100%}}
@@ -81,10 +89,9 @@ const reportSectionStable = '<section id="reportFlowCard" class="card"><div clas
 if (!html.includes(reportSectionStart)) throw new Error('Could not find the report flow section to assign a stable target.');
 html = html.replace(reportSectionStart, reportSectionStable);
 
-// The legacy Report handler used a positional card selector, so the click could fire
-// while scrolling somewhere unrelated. Point directly at the report flow instead.
+// Keep focus synchronous with the real Report tap so iOS is allowed to open the keyboard.
 const oldReportHandler = "$('startReport').onclick=()=>{setStep(1);document.querySelector('.card:nth-of-type(2)')?.scrollIntoView({behavior:'smooth'})}";
-const newReportHandler = "$('startReport').onclick=()=>{setStep(1);document.getElementById('reportFlowCard')?.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>$('description')?.focus(),250)}";
+const newReportHandler = "$('startReport').onclick=()=>{setStep(1);const d=$('description');if(d)d.focus({preventScroll:true});document.getElementById('reportFlowCard')?.scrollIntoView({behavior:'smooth',block:'start'})}";
 if (!html.includes(oldReportHandler)) throw new Error('Could not find the legacy Report button handler to replace.');
 html = html.replace(oldReportHandler, newReportHandler);
 
