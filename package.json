@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "test": "node scripts/build.mjs && node tests/qa.mjs"
+    "build": "node scripts/build.mjs && node scripts/fix-report-target.mjs",
+    "test": "node scripts/build.mjs && node scripts/fix-report-target.mjs && node tests/qa.mjs"
   },
   "devDependencies": {
     "jsdom": "^26.1.0"
