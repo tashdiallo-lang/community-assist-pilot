@@ -29,6 +29,7 @@ window.HTMLElement.prototype.scrollIntoView = () => {};
 
 const script = window.document.querySelector('#ca-simplified-ui-script')?.textContent || '';
 assert.ok(script.trim().length > 100, 'simplified UI script is unexpectedly empty');
+assert.match(script, /if\(b\.textContent!==label\)/, 'action-label observer is not guarded against self-triggered mutation loops');
 new Function(script);
 window.eval(script);
 window.dispatchEvent(new window.Event('load'));
@@ -39,8 +40,19 @@ assert.ok(window.document.getElementById('caBottomNav'), 'mobile bottom navigati
 assert.ok(window.document.getElementById('caWatchSearch'), 'smart watch location field was not created');
 assert.ok(window.document.getElementById('caWatchGPS'), 'device-location watch button was not created');
 
+// Simulate signed-in issue actions arriving after initial render. This previously
+// caused a MutationObserver loop that froze touch/input handling on mobile.
+const dynamicAction = window.document.createElement('button');
+dynamicAction.dataset.progress = 'test';
+dynamicAction.textContent = 'View progress';
+window.document.body.appendChild(dynamicAction);
+await new Promise(resolve => setTimeout(resolve, 30));
+assert.equal(dynamicAction.textContent, 'Track', 'dynamic action label was not compacted');
+
 const watchInput = window.document.getElementById('caWatchSearch');
 const watchFind = window.document.getElementById('caWatchFind');
+watchInput.focus();
+assert.equal(window.document.activeElement, watchInput, 'watch input could not receive focus');
 watchInput.value = '11368';
 watchFind.click();
 
@@ -57,4 +69,8 @@ assert.ok(window.document.getElementById('caSaveArea'), 'ZIP watch action was no
 assert.ok(window.document.querySelectorAll('[data-follow-agency]').length >= 1, 'agency context was not returned for 11368');
 assert.ok(window.document.querySelectorAll('[data-follow-scope]').length >= 1, 'civic district context was not returned for 11368');
 
-console.log('QA PASS: static delivery, simplified UI, mobile navigation, NYC311 removal, ZIP locality, agencies and civic context.');
+const advanced = window.document.getElementById('caAdvancedWatch');
+advanced.open = true;
+assert.equal(advanced.open, true, 'advanced options could not be opened');
+
+console.log('QA PASS: static delivery, mobile interaction stability, simplified UI, NYC311 removal, ZIP locality, agencies and civic context.');
