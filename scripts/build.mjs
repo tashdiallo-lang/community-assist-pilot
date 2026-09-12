@@ -75,11 +75,16 @@ const actionUi = `
 
 let html = base;
 
-// The legacy Report handler used a positional card selector. That became invalid as
-// the UI evolved, so the click fired but often scrolled to the wrong card and looked
-// unresponsive. Always target the actual report form instead.
+// Give the report flow a permanent target instead of relying on page position.
+const reportSectionStart = '<section class="card"><div class="head"><div><div class="eyebrow">LIVE REPORT FLOW</div>';
+const reportSectionStable = '<section id="reportFlowCard" class="card"><div class="head"><div><div class="eyebrow">LIVE REPORT FLOW</div>';
+if (!html.includes(reportSectionStart)) throw new Error('Could not find the report flow section to assign a stable target.');
+html = html.replace(reportSectionStart, reportSectionStable);
+
+// The legacy Report handler used a positional card selector, so the click could fire
+// while scrolling somewhere unrelated. Point directly at the report flow instead.
 const oldReportHandler = "$('startReport').onclick=()=>{setStep(1);document.querySelector('.card:nth-of-type(2)')?.scrollIntoView({behavior:'smooth'})}";
-const newReportHandler = "$('startReport').onclick=()=>{setStep(1);const reportCard=$('description')?.closest('section.card');reportCard?.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>$('description')?.focus(),250)}";
+const newReportHandler = "$('startReport').onclick=()=>{setStep(1);document.getElementById('reportFlowCard')?.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>$('description')?.focus(),250)}";
 if (!html.includes(oldReportHandler)) throw new Error('Could not find the legacy Report button handler to replace.');
 html = html.replace(oldReportHandler, newReportHandler);
 
