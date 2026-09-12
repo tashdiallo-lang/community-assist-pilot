@@ -1,5 +1,5 @@
 [build]
-  command = "node scripts/build.mjs"
+  command = "npm test"
   publish = "dist"
 
 [build.processing]
