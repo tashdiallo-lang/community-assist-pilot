@@ -7,6 +7,9 @@ assert.match(html, /id="ca-simplified-ui"/, 'simplified UI styles were not injec
 assert.match(html, /id="ca-simplified-ui-script"/, 'simplified UI script was not injected');
 assert.match(html, /id="ca-action-ui"/, 'report/action simplification styles were not injected');
 assert.match(html, /id="ca-action-ui-script"/, 'report/action simplification script was not injected');
+assert.match(html, /id="reportFlowCard"/, 'report flow does not have a stable target id');
+assert.match(html, /document\.getElementById\('reportFlowCard'\)\?\.scrollIntoView/, 'Report button is not wired to the stable report flow target');
+assert.doesNotMatch(html, /document\.querySelector\('\.card:nth-of-type\(2\)'\)\?\.scrollIntoView/, 'brittle Report card selector is still present');
 assert.doesNotMatch(html, />NYC311 nearby</i, 'old NYC311 nearby block is still present');
 assert.doesNotMatch(html, />NYC OPEN DATA</i, 'old NYC Open Data branding is still present');
 
@@ -46,6 +49,16 @@ assert.ok(window.document.getElementById('caMoreBtn'), 'More button was not crea
 assert.ok(window.document.getElementById('caBottomNav'), 'mobile bottom navigation was not created');
 assert.ok(window.document.getElementById('caWatchSearch'), 'smart watch location field was not created');
 assert.ok(window.document.getElementById('caWatchGPS'), 'device-location watch button was not created');
+assert.ok(window.document.getElementById('reportFlowCard'), 'report flow card is missing after render');
+
+// Both mobile navigation and the hero action must route through the real Report control.
+let reportClicks = 0;
+window.document.getElementById('startReport')?.addEventListener('click', () => { reportClicks += 1; });
+const bottomReport = window.document.querySelector('#caBottomNav [data-bottom="report"]');
+assert.ok(bottomReport, 'mobile Report navigation button is missing');
+bottomReport.click();
+await new Promise(resolve => setTimeout(resolve, 0));
+assert.equal(reportClicks, 1, 'mobile Report navigation did not activate the real Report control');
 
 // Report flow must be shorter without removing the original functional controls.
 assert.equal(window.document.getElementById('s1')?.textContent, '1 What', 'report step 1 was not simplified');
@@ -127,4 +140,4 @@ const advanced = window.document.getElementById('caAdvancedWatch');
 advanced.open = true;
 assert.equal(advanced.open, true, 'advanced options could not be opened');
 
-console.log('QA PASS: static mobile delivery, simplified report flow, case actions, ZIP watch, civic context and interaction stability.');
+console.log('QA PASS: Report navigation target, static mobile delivery, simplified report flow, case actions, ZIP watch, civic context and interaction stability.');
