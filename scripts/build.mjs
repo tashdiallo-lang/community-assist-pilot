@@ -74,6 +74,15 @@ const actionUi = `
 </script>`;
 
 let html = base;
+
+// The legacy Report handler used a positional card selector. That became invalid as
+// the UI evolved, so the click fired but often scrolled to the wrong card and looked
+// unresponsive. Always target the actual report form instead.
+const oldReportHandler = "$('startReport').onclick=()=>{setStep(1);document.querySelector('.card:nth-of-type(2)')?.scrollIntoView({behavior:'smooth'})}";
+const newReportHandler = "$('startReport').onclick=()=>{setStep(1);const reportCard=$('description')?.closest('section.card');reportCard?.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>$('description')?.focus(),250)}";
+if (!html.includes(oldReportHandler)) throw new Error('Could not find the legacy Report button handler to replace.');
+html = html.replace(oldReportHandler, newReportHandler);
+
 if (!html.includes('id="ca-simplified-ui"')) {
   html = html.replace('</body>', `${stylesMatch[1]}\n${uiScript}\n</body>`);
 }
