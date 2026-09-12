@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs && node scripts/fix-report-target.mjs",
-    "test": "node scripts/build.mjs && node scripts/fix-report-target.mjs && node tests/qa.mjs && node tests/report-focus.mjs"
+    "build": "node scripts/build.mjs && node scripts/fix-report-target.mjs && node scripts/fix-auth-origin.mjs",
+    "test": "node scripts/build.mjs && node scripts/fix-report-target.mjs && node scripts/fix-auth-origin.mjs && node tests/qa.mjs && node tests/report-focus.mjs && node tests/auth-origin.mjs"
   },
   "devDependencies": {
     "jsdom": "^26.1.0"
