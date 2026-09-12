@@ -12,8 +12,9 @@ if (!html.includes('id="reportFlowCard"')) {
 
 const brittleTarget = "document.querySelector('.card:nth-of-type(2)')?.scrollIntoView({behavior:'smooth'})";
 const stableTarget = "document.getElementById('reportFlowCard')?.scrollIntoView({behavior:'smooth',block:'start'})";
-if (html.includes(brittleTarget)) html = html.replace(brittleTarget, stableTarget);
+html = html.replaceAll(brittleTarget, stableTarget);
+if (html.includes(brittleTarget)) throw new Error('A brittle Report navigation selector is still present.');
 if (!html.includes(stableTarget)) throw new Error('Report button does not target reportFlowCard.');
 
 await writeFile(path, html, 'utf8');
-console.log('Hardened Report navigation to a stable reportFlowCard target.');
+console.log('Hardened all Report navigation paths to the stable reportFlowCard target.');
